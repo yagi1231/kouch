@@ -1,0 +1,44 @@
+<h3 class="header-title"><%=@reservation.name%>様の注文内容詳細</h3>
+ 
+  <table>
+    <tr>
+      <th>名前</th>
+      <td><%= @reservation.name %></td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td><%= @reservation.address %></td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><a href="tel:reservation.telnum"><%= @reservation.telnum %></a></td>
+    </tr>
+    <tr>
+      <th>時間</th>
+      <td><%= @reservation.time %><br><%= @reservation.backtime %></td>
+    </tr>
+    <tr>
+      <th>注文内容</th>
+      <td><%= @reservation.order %></td>
+    </tr>
+    <tr>
+      <th>金額</th>
+      <td><%= @reservation.price %>円</td>
+    </tr>
+    <tr>
+      <th>備考</th>
+      <td><%= @reservation.remarks %></td>
+    </tr>
+    <tr>
+      <th>配達員</th>
+      <td><%= @reservation.delivery %></td>
+    </tr>
+  </table>
+ 
+  <div>
+    <ul>
+      <li><%= link_to "削除", :reservation, method: :delete, data:{confirm:"本当に削除しますか？"}, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>
+      <li><%= link_to '編集', :edit_reservation, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>
+      <li><%= link_to "予約一覧表に戻る", :reservations, class: 'top user btn btn-border-shadow btn-border-shadow--color2' %></li>
+    </ul>
+</div>

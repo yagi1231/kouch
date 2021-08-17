@@ -1,0 +1,29 @@
+ <p class="new user"><%= link_to "新規登録", :new_info, class: 'btn btn-border-shadow btn-border-shadow--color2' %></p>
+  <div class="header-title">顧客一覧表
+    <div class="serach">
+      <%= form_tag(infos_path, method: "get") do %>
+        <%= label_tag :name, "" %>
+        <input type="tel"name="telnum" id="telnum" placeholder="検索：電話番号" >
+      <% end %>
+    </div>
+  </div>
+    <table>
+      <thead>
+        <tr>
+          <th>名前</th>
+          <th>住所</th>
+          <th>電話</th>
+          <th>削除</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @infos.each do |info|%>
+          <tr>
+            <td><%= link_to(info.name,"/infos/#{info.id}", class:"telcolor")%><br>(クリックで詳細確認)</td>
+            <td><%= info.address %></td>
+            <td><a href="tel:info.telnum" class="telcolor"><%= info.telnum %></a></td>
+            <td><%= link_to "削除", info, method: :delete, data:{confirm:"本当に削除しますか？"}%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>

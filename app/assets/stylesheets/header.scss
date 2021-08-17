@@ -1,0 +1,50 @@
+.logoimg {
+  margin-left:50px;
+}
+
+.topmenu {
+  padding-top:25px;
+}
+
+.topbar a{
+  margin-right:50px;
+}
+  
+.topmenu {
+  float:right;
+  color:azure;
+}
+
+.topmenu:hover {
+  opacity: 0.5;
+}
+
+.sidemenu {
+  margin-top:30px;
+  width:50%;
+  position: relative;
+  right:30px;
+}
+
+.hambergermenu {
+  text-align: center;
+  margin:20px;
+  font-weight: 900;
+  border-bottom: 5px double;
+}
+
+.serach {
+  text-align: center;
+}
+
+#name {
+  height:20px;
+  width:20%;
+  padding:20px;
+}
+
+#telnum {
+  height:20px;
+  width:20%;
+  padding:20px;
+}

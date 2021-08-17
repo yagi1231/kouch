@@ -1,0 +1,137 @@
+<h3 class="header-title">注文内容変更</h3>
+ 
+    <%= form_for @reservation do |f| %>
+      <table>
+        <tr>
+          <th><%= f.label :name ,"名前" %></th>
+          <td><%= f.text_field :name %></td>
+        </tr>
+ 
+        <tr>
+          <th><%= f.label :address ,"住所" %></th>
+          <td><%= f.text_field :address %></td>
+        </tr>
+
+
+         <tr>
+          <th><%= f.label :telnum ,"電話番号" %></th>
+          <td><input type="tel" inputmode="numeric" pattern="\d*" name="reservation[telnum]" value="<%=@reservation.telnum%>"></td>
+        </tr>
+
+
+         <tr>
+          <th><%= f.label :time ,"時間" %></th>
+          <td><input type="date" name="reservation[time]" value ="<%=@reservation.time%>"> -
+          <input type="text" name="reservation[backtime]" min="11:00" max="21:00" list="time-list" value="<%=@reservation.backtime%>">
+          　　 <datalist id="time-list">
+                <option value="11:00-11:30"></option>
+                <option value="11:30前後"></option>
+                <option value="11:30-12:00"></option>
+                <option value="12:00前後"></option>
+                <option value="12:00-12:30"></option>
+                <option value="12:30前後"></option>
+                <option value="12:30-13:00"></option>
+                <option value="13:00前後"></option>
+                <option value="13:00-13:30"></option>
+                <option value="13:30前後"></option>
+                <option value="13:30-14:00"></option>
+                <option value="14:00前後"></option>
+                <option value="14:00-14:30"></option>
+                <option value="14:30前後"></option>
+                <option value="14:30-15:00"></option>
+                <option value="15:00前後"></option>
+                <option value="15:00-15:30"></option>
+                <option value="15:30前後"></option>
+                <option value="15:30-16:00"></option>
+                <option value="16:00前後"></option>
+                <option value="16:00-16:30"></option>
+                <option value="16:30前後"></option>
+                <option value="16:30-17:00"></option>
+                <option value="17:00前後"></option>
+                <option value="17:00-17:30"></option>
+                <option value="17:30前後"></option>
+                <option value="17:30-18:00"></option>
+                <option value="18:00前後"></option>
+                <option value="18:00-18:30"></option>
+                <option value="18:30前後"></option>
+                <option value="18:30-19:00"></option>
+                <option value="19:00前後"></option>
+                <option value="19:00-19:30"></option>
+                <option value="19:30前後"></option>
+                <option value="19:30-20:00"></option>
+                <option value="20:00前後"></option>
+                <option value="20:00-20:30"></option>
+                <option value="20:30前後"></option>
+                <option value="20:30-21:00"></option>
+                <option value="21:00前後"></option>      
+             </datalist>
+          </td>
+        </tr>
+ 
+        <tr>
+          <th><%= f.label :order ,"注文内容" %></th>
+          <td><%= f.text_field :order ,style: 'width:400px;height:100px;'%></td>
+        </tr>
+
+        <tr>
+          <th><%= f.label :price ,"金額" %></th>
+          <td><input type="number" inputmode="numeric" pattern="\d*" name="reservation[price]" value="<%=@reservation.price%>">円</td>
+        </tr>
+
+
+         <tr>
+          <th><%= f.label :remarks ,"備考" %></th>
+          <td><input type="text" name="reservation[remarks]" placeholder="(例)新住所でマップでは出てこないので、、、など" style="width:400px;height:100px;" value ="<%=@reservation.remarks%>"></td>
+        </tr>
+
+        <tr>
+          <th><%= f.label :time ,"配達員" %></th>
+          <td><input type="text" name="reservation[delivery]" list="delivery" value="<%=@reservation.delivery%>">
+          　　 <datalist id="delivery">
+                <option value="青柳樹"></option>
+                <option value="うーちゃん"></option>
+                <option value="まこちゃん"></option>
+                <option value="小野"></option>
+                <option value="修太"></option>
+                <option value="もとき"></option>
+                <option value="純平"></option>
+                <option value="健太"></option>
+                <option value="くすま"></option>
+                <option value="小杉"></option>
+                <option value="元"></option>
+                <option value="ジャーミン"></option>
+                <option value="鈴木"></option>
+                <option value="ヨシ"></option>
+                <option value="勇二"></option>
+                <option value="大城"></option>
+                <option value="大輝"></option>
+                <option value="小川"></option>
+                <option value="貴一"></option>
+                <option value="浜岡"></option>
+                <option value="優月"></option>
+                <option value="幕内"></option>
+                <option value="まゆ"></option>
+                <option value="宮崎"></option>
+                <option value="フミヤ"></option>
+                <option value="もも"></option>
+                <option value="ゆあさ"></option>
+                <option value="優"></option>
+                <option value="石井"></option>
+                <option value="尾崎"></option>
+                <option value="ルカ"></option>
+                <option value="PANYA"></option>
+                <option value="ARATA"></option>
+                <option value="Gota"></option>
+                <option value="鹿島"></option>
+                <option value="けんしん"></option>
+                <option value="優（田村）"></option>
+             </datalist>
+      </table>
+ 
+      <div>
+        <ul>
+          <li><%= f.submit "登録完了する", class: 'submit user',data:{confirm:"この情報で変更しますか？"}%></li>
+          <li><%= link_to "予約一覧表に戻る", :reservations, class: 'top user btn btn-border-shadow btn-border-shadow--color2' %></li>
+        </ul>
+      </div>
+    <% end %>

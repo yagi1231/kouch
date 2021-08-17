@@ -1,0 +1,27 @@
+<div class="header">
+  <div class="topbar">
+    <%= link_to image_tag("IMG_0951.jpg"),"/reservations"%>
+     <header>
+       <div class="header-logo-menu">
+         <div id="nav-drawer">
+           <input id="nav-input" type="checkbox" class="nav-unshown">
+           <label id="nav-open" for="nav-input"><span></span></label>
+           <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+           <div id="nav-content">
+             <p class="hambergermenu">メニュー一覧</p>
+               <% if @current_user %>
+                 <%=link_to "予約一覧表", :reservations, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+                 <%= link_to("ログアウト", logout_path, method: :post, data: {confirm: "ログアウトしますか？"}, class: "sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2") %>
+                 <%=link_to "お客様情報一覧", :infos, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+                 <%=link_to "新規お客様情報入力", :new_info, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+               <% else %>
+                  <%=link_to "ログイン", :login, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+                  <%=link_to "新規登録", :new_user, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+                  <%=link_to "予約一覧表", :reservations, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+               <% end %>
+           </div>
+         </div>
+       </div>
+    </header>  
+  </div>
+</div>

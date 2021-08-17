@@ -1,0 +1,17 @@
+   ja:
+      activerecord:
+        models:
+          user: ユーザー
+        attributes:
+          reservation:
+            name: 名前
+            address: 住所
+            telnum: 電話番号
+            backtime: 時間
+            order: 注文
+        attributes:
+          info:
+            name: 名前
+            address: 住所
+            telnum: 電話番号
+            

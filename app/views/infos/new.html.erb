@@ -1,0 +1,34 @@
+<h3 class="header-title">新規お客様情報</h3>
+<%= render "reservations/shared/error", obj: @info %>
+
+    <%= form_for @info do |f| %>
+      <table>
+        <tr>
+          <th><%= f.label :name ,"名前" %></th>
+          <td><%= f.text_field :name %></td>
+        </tr>
+ 
+        <tr>
+          <th><%= f.label :address ,"住所" %></th>
+          <td><%= f.text_field :address %></td>
+        </tr>
+
+
+         <tr>
+          <th><%= f.label :telnum ,"電話番号" %></th>
+          <td><input type="tel" inputmode="numeric" pattern="\d*" name="info[telnum]"></td>
+        </tr>
+
+         <tr>
+          <th><%= f.label :remarks ,"備考" %></th>
+          <td><input type="text" name="info[remark]" placeholder="(例)新住所でマップでは出てこないので、、、など" style="width:400px;height:100px;" ></td>
+        </tr>
+      </table>
+ 
+      <div>
+        <ul>
+          <li><%= f.submit "登録完了する", class: 'submit user',data:{confirm:"この情報で登録しますか？"}%></li>
+          <li><%= link_to "お客様情報一覧に戻る", :infos, class: 'top user btn btn-border-shadow btn-border-shadow--color2' %></li>
+        </ul>
+      </div>
+    <% end %>

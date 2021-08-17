@@ -1,0 +1,30 @@
+<h3 class="header-title"><%=@info.name%>様の注文内容詳細</h3>
+  <%= form_tag("/reservations/new") do %>    
+    <table>
+      <tr>
+        <th>名前</th>
+        <td><input name="name"style="border:solid 0px"value="<%=@info.name%>"readonly></td>
+      </tr>
+       <tr>
+        <th>住所</th>
+        <td><input name="address"style="border:solid 0px"value="<%=@info.address%>"readonly></td>
+      </tr>
+       <tr>
+        <th>電話番号</th>
+        <td><input name="telnum"style="border:solid 0px"value="<%=@info.telnum%>"readonly></td>
+      </tr>
+       <tr>
+        <th>備考</th>
+        <td><input name="remark"style="border:solid 0px"value="<%=@info.remark%>"readonly></td>
+      </tr>
+    </table>
+    <input type="submit" value="新規注文画面へ"class="submit user" >
+  <% end %>
+
+  <div>
+    <ul>
+     　<li><%= link_to "削除", :reservation, method: :delete, data:{confirm:"本当に削除しますか？"}, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>
+      <li><%= link_to '編集', :edit_info, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>
+      <li><%= link_to "お客様情報一覧に戻る", :infos, class: 'top user btn btn-border-shadow btn-border-shadow--color2' %></li>
+    </ul>
+</div>
