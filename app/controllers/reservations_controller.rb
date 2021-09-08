@@ -19,7 +19,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(params.require(:reservation).permit(:name,:order, :address, :delivery, :price, :telnum, :backtime,:time, :remarks))
+    @reservation = Reservation.new(params.require(:reservation).permit(:name,:order, :address, :delivery, :price, :telnum, :time, :remarks))
     if @reservation.save
       redirect_to :reservations
     else

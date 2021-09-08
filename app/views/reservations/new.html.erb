@@ -78,9 +78,12 @@
           <th><%= f.label :price ,"金額" %></th>
           <td><input type="number" inputmode="numeric" pattern="\d*" name="reservation[price]">円</td>
         </tr>
+        
+         <tr>
+          <th><%= f.label :remarks ,"備考" %></th>
+          <td><input type="text" name="reservation[remarks]" placeholder="(例)新住所でマップでは出てこないので、、、など" style="width:400px;height:100px;" value ="<%=@reservation.remarks%>"></td>
+        </tr>
 
-
-         
       </table>
  
       <div>
