@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
       name: params[:name] ,
       address: params[:address],
       telnum: params[:telnum],
-      remark: params[:remark],
+      remarks: params[:remarks],
     )
   end
 
