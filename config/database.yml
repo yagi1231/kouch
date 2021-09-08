@@ -21,8 +21,5 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  database: my_database_production
-  pool: 5
-  timeout: 5000
-  encoding: unicode
+  <<: *default
+  url: <%= ENV['JAWSDB_URL']&.sub('mysql://', 'mysql2://') %>
