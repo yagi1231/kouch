@@ -3,8 +3,8 @@
     <%= form_for @info do |f| %>
       <table>
         <tr>
-          <th><%= f.label :name ,"名前" %></th>
-          <td><%= f.text_field :name %>様</td>
+          <th><%= f.label :name ,"名前" %><br>(⚠️カタカナ入力)</th>
+          <td><%= f.text_field :name, placeholder:"カタカナ入力"%>様</td>
         </tr>
  
         <tr>

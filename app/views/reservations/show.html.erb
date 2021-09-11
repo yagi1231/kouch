@@ -3,7 +3,7 @@
   <table>
     <tr>
       <th>名前</th>
-      <td><%= @reservation.name %></td>
+      <td><%= @reservation.name %>様</td>
     </tr>
     <tr>
       <th>住所</th>
@@ -11,7 +11,7 @@
     </tr>
     <tr>
       <th>電話番号</th>
-      <td><a href="tel:reservation.telnum"><%= @reservation.telnum %></a></td>
+      <td><a href="tel:<%= @reservation.telnum %>"><%= @reservation.telnum %></a></td>
     </tr>
     <tr>
       <th>時間</th>

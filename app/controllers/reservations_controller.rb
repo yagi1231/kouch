@@ -3,7 +3,8 @@ class ReservationsController < ApplicationController
   
   def index
     @q = Reservation.ransack(params[:q])
-    @reservations = @q.result(distinct: true).order(:time,:backtime)  
+    @reservations = @q.result(distinct: true).order(:time,:backtime)
+    
   end
 
   def new
@@ -16,7 +17,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(params.require(:reservation).permit(:name,:order, :address, :delivery, :price, :telnum, :time, :remarks))
+    @reservation = Reservation.new(params.require(:reservation).permit(:name,:order, :address, :delivery, :price, :telnum, :time, :backtime, :remarks))
     if @reservation.save
       redirect_to :reservations
     else
@@ -34,7 +35,7 @@ class ReservationsController < ApplicationController
 
   def update
     @reservation = Reservation.find(params[:id])
-    if @reservation.update(params.require(:reservation).permit(:name,:order, :address, :delivery, :price, :telnum, :time, :remarks))
+    if @reservation.update(params.require(:reservation).permit(:name,:order, :address, :delivery, :price, :telnum, :time, :backtime, :remarks))
       redirect_to :reservations
     else
       render "edit"

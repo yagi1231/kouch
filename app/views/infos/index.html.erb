@@ -10,16 +10,16 @@
     <table>
       <thead>
         <tr>
-          <th>名前(クリックで詳細確認)</th>
+          <th>名前<br>(クリックで詳細確認)</th>
           <th>住所</th>
-          <th>電話(クリックで通話可能)</th>
+          <th>電話<br>(クリックで通話可能)</th>
           <th>削除</th>
         </tr>
       </thead>
       <tbody>
         <% @infos.each do |info|%>
           <tr>
-            <td><%= link_to(info.name,"/infos/#{info.id}", class:"telcolor")%></td>
+            <td><%= link_to(info.name,"/infos/#{info.id}", class:"telcolor")%>様</td>
             <td><%= info.address %></td>
             <td><a href="tel:<%= info.telnum %>" class="telcolor"><%= info.telnum %></a></td>
             <td><%= link_to "削除", info, method: :delete, data:{confirm:"本当に削除しますか？"}%></td>
