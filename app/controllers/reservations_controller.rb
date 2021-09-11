@@ -2,11 +2,8 @@ class ReservationsController < ApplicationController
   before_action :authenticate_user, {only: [:show, :edit, :update]}
   
   def index
-    @reservations = Reservation.all.order(:time,:backtime)
-    @infos = Info.all
-    if params[:name].present?
-      @reservations = @reservations.get_by_name params[:name]
-    end
+    @q = Reservation.ransack(params[:q])
+    @reservations = @q.result(distinct: true).order(:time,:backtime)  
   end
 
   def new

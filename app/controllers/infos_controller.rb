@@ -1,9 +1,7 @@
 class InfosController < ApplicationController
   def index 
-    @infos = Info.all
-    if params[:telnum].present?
-      @infos = @infos.get_by_telnum params[:telnum]
-    end
+    @q = Info.ransack(params[:q])
+    @infos = @q.result(distinct: true).order(name: "DESC")  
   end
 
   def new

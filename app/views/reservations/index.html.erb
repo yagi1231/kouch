@@ -1,34 +1,32 @@
- <p class="new user"><%= link_to "新規注文", :new_reservation, class: 'btn btn-border-shadow btn-border-shadow--color2' %></p>
-  <div class="header-title">予約一覧表
-    <div class="serach">
-      <%= form_tag(reservations_path, method: "get") do %>
-        <%= label_tag :name, "" %><%= text_field_tag :name, params[:name], {placeholder: "検索：名前"} %>
-      <% end %>
-    </div>
-   </div>
-    <table>
-      <thead>
-        <tr>
-          <th>名前</th>
-          <th>住所</th>
-          <th>電話</th>
-          <th>時間</th>
-          <th>帰宅時間</th>
-          <th>配達員</th>
-          
-        </tr>
-      </thead>
- 
-      <tbody>
-        <% @reservations.each do |reservation| %>
-          <tr>
-            <td><%= link_to(reservation.name,"/reservations/#{reservation.id}", class:"telcolor")%><br>(クリックで詳細確認)</td>
-            <td><%= reservation.address %></td>
-            <td><a href="tel:reservation.telnum" class="telcolor"><%= reservation.telnum %></a></td>
-            <td><%= reservation.time %><br><br><%= reservation.backtime %></td>
-            <td><%= reservation.updated_at.to_s(:datetime_jp) %></td>
-            <td><%= reservation.delivery %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+<p class="new user"><%= link_to "新規注文", :new_reservation, class: 'btn btn-border-shadow btn-border-shadow--color2' %></p>
+<div class="header-title">予約一覧表
+  <div class="serach">
+    <%= search_form_for @q do |f| %>
+      <input type="date" name=q[time_cont] value="<%=Date.today%>">
+      <%= f.search_field :name_or_telnum_or_address_cont ,placeholder: "名前・電話、住所検索"%>
+      <%= f.submit %>
+    <% end %>
+   </div> 
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>名前(クリックで詳細確認)</th>
+      <th>住所</th>
+      <th>電話</th>
+      <th>時間</th>
+      <th>配達員</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= link_to(reservation.name,"/reservations/#{reservation.id}", class:"telcolor")%></td>
+        <td><%= reservation.address %></td>
+        <td><a href="tel:<%= reservation.telnum %>" class="telcolor"><%= reservation.telnum %></a></td>
+        <td><%= reservation.time %><br><br><%= reservation.backtime %></td>
+        <td><%= reservation.delivery %></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
