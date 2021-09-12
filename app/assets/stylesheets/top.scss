@@ -1,27 +1,27 @@
 table {
-    width:100%
+  width:100%
 }
 
 th {
-    padding: 20px 30px;
-    background-color: white;
-    overflow: hidden;
-    box-shadow: 0 2px 6px #c1ced7;
-    width: 25%;
+  padding: 40px 0px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  width: 25%;
 }
 tr {
-    padding: 20px 30px;
-    background-color: white;
-    overflow: hidden;
-    box-shadow: 0 2px 6px #c1ced7;
-    width: 25%;
+  padding: 40px 0px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  width: 25%;
 }
 td {
-    padding: 20px 30px;
-    background-color: white;
-    overflow: hidden;
-    box-shadow: 0 2px 6px #c1ced7;
-    width: 25%;
+  padding: 40px 0px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  width: 25%;
 }
 
 .loginmenu {
@@ -30,13 +30,13 @@ td {
 }
 
 .header-title {
-    font-size:36px;
-    margin:60px 20px 20px 0; 
+  font-size:36px;
+  margin:60px 20px 20px 0; 
 }
 
 .user {
-    font-size:36px;
-    margin-top:30px;
+  font-size:36px;
+  margin-top:30px;
 }
 
 *,
@@ -144,7 +144,7 @@ html {
     border-radius:.25em;
     box-sizing:border-box;
     left:50%;
-    padding:10vmin;
+    padding:0 10px;
     text-align:center;
     top:50%;
   }
@@ -266,16 +266,14 @@ html {
    -ms-flex-direction: row;
   }
   
-  .logo-area{text-align:center;margin:auto;}
+  .logo-area{
+    text-align:center;margin:auto;
+  }
  
   
   .telcolor {
     color:red;
   }
 
-　.input{
-  font-size:18px;
-}
-  
   
   
