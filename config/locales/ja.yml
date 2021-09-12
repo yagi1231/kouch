@@ -9,6 +9,9 @@
             telnum: 電話番号
             backtime: 時間
             order: 注文
+            default: ! '%Y/%m/%d'
+            long: ! '%Y年%m月%d日(%a)'
+            short: ! '%m/%d'
         attributes:
           info:
             name: 名前

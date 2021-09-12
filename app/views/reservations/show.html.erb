@@ -1,5 +1,4 @@
 <h3 class="header-title"><%=@reservation.name%>様の注文内容詳細</h3>
- 
   <table>
     <tr>
       <th>名前</th>
@@ -10,7 +9,7 @@
       <td><%= @reservation.address %></td>
     </tr>
     <tr>
-      <th>電話番号</th>
+      <th>電話番号 <br>(クリックで通過可能)</th>
       <td><a href="tel:<%= @reservation.telnum %>"><%= @reservation.telnum %></a></td>
     </tr>
     <tr>
@@ -34,11 +33,23 @@
       <td><%= @reservation.delivery %></td>
     </tr>
   </table>
- 
-  <div>
+<div id="printarea">
+  <div class="receipt">
     <ul>
-      <li><%= link_to "削除", :reservation, method: :delete, data:{confirm:"本当に削除しますか？"}, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>
-      <li><%= link_to '編集', :edit_reservation, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>
-      <li><%= link_to "予約一覧表に戻る", :reservations, class: 'top user btn btn-border-shadow btn-border-shadow--color2' %></li>
+      <li class="receipt-title">領収書</li>
+      <li class="receipt-date"><%= Date.current.strftime(" %Y年 %m月 %d日") %></li><br>
+      <li class="receipt-name"><%= @reservation.name %>　様</li>
+      <li class="receipt-price">¥  <%= @reservation.price %> -</li>
+      <li class="receipt-proviso">但　お弁当代として</li>
+      <li>上記正に領収いたしました</li><br>
+      <li class="receipt-company">株式会社　蒼柚<br>埼玉県所沢市東町13-29H-CUBE 1B<br>河内　敏弘</li>
     </ul>
+  </div>
+  <button onclick="window.print();">このページを印刷する</button>
+<div>
+  <ul>
+    <li><%= link_to "削除", :reservation, method: :delete, data:{confirm:"本当に削除しますか？"}, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>
+    <li><%= link_to '編集', :edit_reservation, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>
+    <li><%= link_to "予約一覧表に戻る", :reservations, class: 'top user btn btn-border-shadow btn-border-shadow--color2' %></li>
+  </ul>
 </div>

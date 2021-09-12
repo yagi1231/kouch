@@ -4,7 +4,6 @@ class ReservationsController < ApplicationController
   def index
     @q = Reservation.ransack(params[:q])
     @reservations = @q.result(distinct: true).order(:time,:backtime)
-    
   end
 
   def new
@@ -47,5 +46,7 @@ class ReservationsController < ApplicationController
     @reservation.destroy
     flash[:notice] = "情報を削除しました"
     redirect_to :reservations
+  end
+  def top
   end
 end

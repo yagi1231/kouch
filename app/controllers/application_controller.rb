@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
           redirect_to("/reservations")
         end
       end
+
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:address])
+    end
 end

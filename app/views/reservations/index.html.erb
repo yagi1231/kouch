@@ -22,7 +22,7 @@
     <% @reservations.each do |reservation| %>
       <tr>
         <td><%= link_to(reservation.name,"/reservations/#{reservation.id}", class:"telcolor")%>様</td>
-        <td><a href="map:<%= reservation.telnum %>"><%= reservation.address %></a></td>
+        <td><a href="map:<%=reservation.address%>"><%= reservation.address %></a></td>
         <td><a href="tel:<%= reservation.telnum %>" class="telcolor"><%= reservation.telnum %></a></td>
         <td><%= reservation.time %><br><br><%= reservation.backtime %></td>
         <td><%= reservation.delivery %></td>

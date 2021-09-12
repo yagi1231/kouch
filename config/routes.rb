@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "users/:id" => "users#show"
   get "infos/:id" => "infos#show"
   post "infos/create" => "infos#create"
+  get "reservation/top" => "reservation#top"
   
   post "reservations/new" => "reservations#new"
   post "reservations/create" => "reservations#create"
