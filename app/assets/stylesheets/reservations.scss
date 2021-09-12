@@ -2,12 +2,7 @@
   outline: 0;
   margin: 0;
   padding: 0;
-  font-size:16px;
 }
-
-html,body {
-  height: 100%;
-  }
 
 a {
   color:black;
@@ -24,7 +19,7 @@ li{
 
 @media screen and (max-width: 480px){
  body {
-   width:812px;
+   width:375px;
  }
  .content { 
   border-radius:.25em;
