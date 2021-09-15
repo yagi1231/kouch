@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <th>金額</th>
-      <td><%= @reservation.price %>円</td>
+      <td><%= @reservation.price.to_s(:delimited) %>円</td>
     </tr>
     <tr>
       <th>備考</th>
@@ -39,7 +39,7 @@
       <li class="receipt-title">領収書</li>
       <li class="receipt-date"><%= Date.current.strftime(" %Y年 %m月 %d日") %></li><br>
       <li class="receipt-name"><%= @reservation.name %>　様</li>
-      <li class="receipt-price">¥  <%= @reservation.price %> -</li>
+      <li class="receipt-price">¥  <%= @reservation.price.to_s(:delimited)%> -</li>
       <li class="receipt-proviso">但　お弁当代として</li>
       <li>上記正に領収いたしました</li><br>
       <li class="receipt-company">株式会社　蒼柚<br>埼玉県所沢市東町13-29H-CUBE 1B<br>河内　敏弘</li>

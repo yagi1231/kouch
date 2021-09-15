@@ -6,6 +6,8 @@
     width: 100%;
     margin:30px auto;
     font-weight: 900;
+    background-image:url("unnamed .gif");
+    background-size: 100% 100%; 
   }
 
   .receipt-title {
@@ -15,9 +17,10 @@
 
   .receipt-name {
     border-bottom: 2px solid black;
-    width:40%;
+    width:20%;
     font-size:30px;
     margin-top:20px;
+    margin:0 auto;
   }
   .receipt-date {
     float:right;
