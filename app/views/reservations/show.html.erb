@@ -33,19 +33,22 @@
       <td><%= @reservation.delivery %></td>
     </tr>
   </table>
-<div id="printarea">
+<div class="print-area">
   <div class="receipt">
     <ul>
       <li class="receipt-title">領収書</li>
       <li class="receipt-date"><%= Date.current.strftime(" %Y年 %m月 %d日") %></li><br>
-      <li class="receipt-name"><%= @reservation.name %>　様</li>
+      <li class="receipt-name"><%= @reservation.name %>様</li>
       <li class="receipt-price">¥  <%= @reservation.price.to_s(:delimited)%> -</li>
       <li class="receipt-proviso">但　お弁当代として</li>
       <li>上記正に領収いたしました</li><br>
       <li class="receipt-company">株式会社　蒼柚<br>埼玉県所沢市東町13-29H-CUBE 1B<br>河内　敏弘</li>
     </ul>
   </div>
-  <button onclick="window.print();">このページを印刷する</button>
+</div>
+<button class="print-btn">
+　　<span>結果だけを印刷する</span>
+</button>
 <div>
   <ul>
     <li><%= link_to "削除", :reservation, method: :delete, data:{confirm:"本当に削除しますか？"}, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>

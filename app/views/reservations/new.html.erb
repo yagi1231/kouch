@@ -4,8 +4,8 @@
     <%= form_for @reservation do |f| %>
       <table>
         <tr>
-          <th><%= f.label :name ,"名前" %><br>(⚠️カタカナ入力)</th>
-          <td><%= f.text_field :name, placeholder:"カタカナ入力"%>様</td>
+          <th><%= f.label :name ,"名前" %><br>(⚠️民家はカタカナ入力)</th>
+          <td><%= f.text_field :name, placeholder:"民家はカタカナ入力"%>様</td>
         </tr>
  
         <tr>
@@ -21,7 +21,7 @@
 
 
         <tr>
-          <th><%= f.label :time ,"日にち-時間" %></th>
+          <th><%= f.label :time ,"日付-時間" %></th>
           <td><input type="date" name="reservation[time]" value="<%=Date.today%>"> -
           <input type="text" name="reservation[backtime]" min="11:00" max="21:00" list="time-list" value="<%=@reservation.backtime%>">
           　　 <datalist id="time-list">
@@ -71,7 +71,7 @@
  
         <tr>
           <th><%= f.label :order ,"注文内容" %></th>
-          <td><%= f.text_field :order ,style: 'width:400px;height:100px;'%></td>
+          <td><%= f.text_field :order ,style: 'width:80%;height:100px;'%></td>
         </tr>
 
         <tr>
@@ -81,7 +81,7 @@
         
          <tr>
           <th><%= f.label :remarks ,"備考" %></th>
-          <td><input type="text" name="reservation[remarks]" placeholder="(例)新住所でマップでは出てこないので、、、など" style="width:400px;height:100px;" value ="<%=@reservation.remarks%>"></td>
+          <td><input type="text" name="reservation[remarks]" placeholder="(例)マップでは出てこない" style="width:80%;height:100px;" value ="<%=@reservation.remarks%>"></td>
         </tr>
 
       </table>
