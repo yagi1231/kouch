@@ -14,6 +14,7 @@
                  <%= link_to("ログアウト", logout_path, method: :post, data: {confirm: "ログアウトしますか？"}, class: "sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2") %>
                  <%=link_to "お客様情報一覧", :infos, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
                  <%=link_to "新規お客様情報入力", :new_info, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+                 <%=link_to "売上", :price_reservations, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
                <% else %>
                   <%=link_to "ログイン", :login, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
                   <%=link_to "新規登録", :new_user, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>

@@ -25,6 +25,10 @@
       <td><%= @reservation.price.to_s(:delimited) %>円</td>
     </tr>
     <tr>
+      <th>カテゴリー</th>
+      <td><%= @reservation.category%></td>
+    </tr>
+    <tr>
       <th>備考</th>
       <td><%= @reservation.remarks %></td>
     </tr>
@@ -56,3 +60,4 @@
     <li><%= link_to "予約一覧表に戻る", :reservations, class: 'top user btn btn-border-shadow btn-border-shadow--color2' %></li>
   </ul>
 </div>
+

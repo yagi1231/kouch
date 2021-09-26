@@ -26,45 +26,45 @@
           <input type="text" name="reservation[backtime]" min="11:00" max="21:00" list="time-list" value="<%=@reservation.backtime%>">
           　　 <datalist id="time-list">
                 <option value="11:00-11:30"></option>
-                <option value="11:30前後"></option>
+                <option value="11:30">前後</option>
                 <option value="11:30-12:00"></option>
-                <option value="12:00前後"></option>
+                <option value="12:00">前後</option>
                 <option value="12:00-12:30"></option>
-                <option value="12:30前後"></option>
+                <option value="12:30">前後</option>
                 <option value="12:30-13:00"></option>
-                <option value="13:00前後"></option>
+                <option value="13:00">前後</option>
                 <option value="13:00-13:30"></option>
-                <option value="13:30前後"></option>
+                <option value="13:30">前後</option>
                 <option value="13:30-14:00"></option>
-                <option value="14:00前後"></option>
+                <option value="14:00">前後</option>
                 <option value="14:00-14:30"></option>
-                <option value="14:30前後"></option>
+                <option value="14:30">前後</option>
                 <option value="14:30-15:00"></option>
-                <option value="15:00前後"></option>
+                <option value="15:00">前後</option>
                 <option value="15:00-15:30"></option>
-                <option value="15:30前後"></option>
+                <option value="15:30">前後</option>
                 <option value="15:30-16:00"></option>
-                <option value="16:00前後"></option>
+                <option value="16:00">前後</option>
                 <option value="16:00-16:30"></option>
-                <option value="16:30前後"></option>
+                <option value="16:30">前後</option>
                 <option value="16:30-17:00"></option>
-                <option value="17:00前後"></option>
+                <option value="17:00">前後</option>
                 <option value="17:00-17:30"></option>
-                <option value="17:30前後"></option>
+                <option value="17:30">前後</option>
                 <option value="17:30-18:00"></option>
-                <option value="18:00前後"></option>
+                <option value="18:00">前後</option>
                 <option value="18:00-18:30"></option>
-                <option value="18:30前後"></option>
+                <option value="18:30">前後</option>
                 <option value="18:30-19:00"></option>
-                <option value="19:00前後"></option>
+                <option value="19:00">前後</option>
                 <option value="19:00-19:30"></option>
-                <option value="19:30前後"></option>
+                <option value="19:30">前後</option>
                 <option value="19:30-20:00"></option>
-                <option value="20:00前後"></option>
+                <option value="20:00">前後</option>
                 <option value="20:00-20:30"></option>
-                <option value="20:30前後"></option>
+                <option value="20:30">前後</option>
                 <option value="20:30-21:00"></option>
-                <option value="21:00前後"></option>      
+                <option value="21:00">前後</option>      
              </datalist>
           </td>
         </tr>
@@ -77,6 +77,16 @@
         <tr>
           <th><%= f.label :price ,"金額" %></th>
           <td><input type="number" inputmode="numeric" pattern="\d*" name="reservation[price]">円</td>
+        </tr>
+
+          <tr>
+          <th><%= f.label :category ,"カテゴリー（一つのみ選択）" %></th>
+          <td><input type="checkbox" value="KOUCH" name="reservation[category]" class="box">
+          <label for="coding">KOUCH</label><br>
+          <input type="checkbox" value="大戸屋" name="reservation[category]" class="box">
+          <label for="coding">大戸屋</label><br>
+          <input type="checkbox" value="コラボ" name="reservation[category]" class="box">
+          <label for="coding">コラボ</label></td>
         </tr>
         
          <tr>

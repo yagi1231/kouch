@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(params.require(:reservation).permit(:name,:order, :address, :delivery, :price, :telnum, :time, :backtime, :remarks))
+    @reservation = Reservation.new(params.require(:reservation).permit(:name,:order, :address, :delivery, :price, :telnum, :time, :backtime, :remarks, :category))
     if @reservation.save
       redirect_to :reservations
     else
@@ -34,7 +34,7 @@ class ReservationsController < ApplicationController
 
   def update
     @reservation = Reservation.find(params[:id])
-    if @reservation.update(params.require(:reservation).permit(:name,:order, :address, :delivery, :price, :telnum, :time, :backtime, :remarks))
+    if @reservation.update(params.require(:reservation).permit(:name,:order, :address, :delivery, :price, :telnum, :time, :backtime, :remarks, :category))
       redirect_to :reservations
     else
       render "edit"
@@ -47,6 +47,11 @@ class ReservationsController < ApplicationController
     flash[:notice] = "情報を削除しました"
     redirect_to :reservations
   end
-  def top
+
+  def price
+    @ave_prices = Reservation.order(:time).group(:time).average(:price)
+    @sum_prices = Reservation.order(:time).group(:time).sum(:price)
+    @sum_price= Reservation.group("YEAR(time)").group("MONTH(time)").sum(:price) 
+    @ave_price= Reservation.group("YEAR(time)").group("MONTH(time)").average(:price)
   end
 end

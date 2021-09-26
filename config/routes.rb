@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  resources :reservations do
+    collection do
+      get 'price'
+      end
+      
+      end
   resources :users
-  resources :reservations
   resources :infos
   root 'reservations#index'
 
@@ -16,9 +21,9 @@ Rails.application.routes.draw do
   get "users/:id" => "users#show"
   get "infos/:id" => "infos#show"
   post "infos/create" => "infos#create"
-  get "reservation/top" => "reservation#top"
-  
+
   post "reservations/new" => "reservations#new"
   post "reservations/create" => "reservations#create"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
