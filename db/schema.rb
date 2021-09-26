@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_08_153314) do
+ActiveRecord::Schema.define(version: 2021_09_26_103713) do
 
   create_table "infos", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_09_08_153314) do
     t.string "time"
     t.string "remarks"
     t.string "tel"
+    t.string "category"
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
