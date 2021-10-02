@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   resources :reservations do
     collection do
       get 'price'
-      end
-      
-      end
+    end
+  end
   resources :users
   resources :infos
   root 'reservations#index'

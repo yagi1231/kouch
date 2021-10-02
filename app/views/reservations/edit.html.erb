@@ -1,22 +1,66 @@
 <h3 class="header-title">注文内容変更</h3>
+ <%= render "reservations/shared/error", obj: @reservation %>
  
     <%= form_for @reservation do |f| %>
       <table>
         <tr>
+        <th><%= f.label :time ,"配達員" %></th>
+        <td><input type="text" name="reservation[delivery]" list="delivery" value="<%=@reservation.delivery%>">
+          <datalist id="delivery">
+            <option value="青柳樹"></option>
+            <option value="うーちゃん"></option>
+            <option value="まこちゃん"></option>
+            <option value="小野"></option>
+            <option value="修太"></option>
+            <option value="もとき"></option>
+            <option value="純平"></option>
+            <option value="健太"></option>
+            <option value="くすま"></option>
+            <option value="小杉"></option>
+            <option value="元"></option>
+            <option value="ジャーミン"></option>
+            <option value="鈴木"></option>
+            <option value="ヨシ"></option>
+            <option value="勇二"></option>
+            <option value="大城"></option>
+            <option value="大輝"></option>
+            <option value="小川"></option>
+            <option value="貴一"></option>
+            <option value="浜岡"></option>
+            <option value="優月"></option>
+            <option value="幕内"></option>
+            <option value="まゆ"></option>
+            <option value="宮崎"></option>
+            <option value="フミヤ"></option>
+            <option value="もも"></option>
+            <option value="ゆあさ"></option>
+            <option value="優"></option>
+            <option value="石井"></option>
+            <option value="尾崎"></option>
+            <option value="ルカ"></option>
+            <option value="PANYA"></option>
+            <option value="ARATA"></option>
+            <option value="Gota"></option>
+            <option value="鹿島"></option>
+            <option value="けんしん"></option>
+            <option value="優（田村）"></option>
+         </datalist>
+        <tr>
+
           <th><%= f.label :name ,"名前" %><br>(⚠️カタカナ入力)</th>
           <td><%= f.text_field :name, placeholder:"カタカナ入力"%>様</td>
         </tr>
  
-        <tr>
+         <tr>
           <th><%= f.label :address ,"住所" %></th>
           <td><%= f.text_field :address %></td>
-        </tr>
+         </tr>
 
 
          <tr>
           <th><%= f.label :telnum ,"電話番号" %></th>
           <td><input type="tel" inputmode="numeric" pattern="\d*" name="reservation[telnum]" value="<%=@reservation.telnum%>"></td>
-        </tr>
+         </tr>
 
 
          <tr>
@@ -92,49 +136,6 @@
           <th><%= f.label :remarks ,"備考" %></th>
           <td><input type="text" name="reservation[remarks]" placeholder="(例)マップでは出てこない" style="width:300px;height:100px;" value ="<%=@reservation.remarks%>"></td>
         </tr>
-
-        <tr>
-          <th><%= f.label :time ,"配達員" %></th>
-          <td><input type="text" name="reservation[delivery]" list="delivery" value="<%=@reservation.delivery%>">
-          　　 <datalist id="delivery">
-                <option value="青柳樹"></option>
-                <option value="うーちゃん"></option>
-                <option value="まこちゃん"></option>
-                <option value="小野"></option>
-                <option value="修太"></option>
-                <option value="もとき"></option>
-                <option value="純平"></option>
-                <option value="健太"></option>
-                <option value="くすま"></option>
-                <option value="小杉"></option>
-                <option value="元"></option>
-                <option value="ジャーミン"></option>
-                <option value="鈴木"></option>
-                <option value="ヨシ"></option>
-                <option value="勇二"></option>
-                <option value="大城"></option>
-                <option value="大輝"></option>
-                <option value="小川"></option>
-                <option value="貴一"></option>
-                <option value="浜岡"></option>
-                <option value="優月"></option>
-                <option value="幕内"></option>
-                <option value="まゆ"></option>
-                <option value="宮崎"></option>
-                <option value="フミヤ"></option>
-                <option value="もも"></option>
-                <option value="ゆあさ"></option>
-                <option value="優"></option>
-                <option value="石井"></option>
-                <option value="尾崎"></option>
-                <option value="ルカ"></option>
-                <option value="PANYA"></option>
-                <option value="ARATA"></option>
-                <option value="Gota"></option>
-                <option value="鹿島"></option>
-                <option value="けんしん"></option>
-                <option value="優（田村）"></option>
-             </datalist>
       </table>
  
       <div>

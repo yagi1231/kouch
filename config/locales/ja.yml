@@ -1,20 +1,20 @@
-   ja:
-      activerecord:
-        models:
-          user: ユーザー
+ja:
+  activerecord:
+    models:
+    attributes:
+      reservation:
+        name: 名前
+        address: 住所
+        telnum: 電話番号
+        backtime: 時間
+        order: 注文
+        price: 金額
+        default: ! '%Y/%m/%d'
+        long: ! '%Y年%m月%d日(%a)'
+        short: ! '%m/%d'
         attributes:
-          reservation:
-            name: 名前
-            address: 住所
-            telnum: 電話番号
-            backtime: 時間
-            order: 注文
-            default: ! '%Y/%m/%d'
-            long: ! '%Y年%m月%d日(%a)'
-            short: ! '%m/%d'
-        attributes:
-          info:
-            name: 名前
-            address: 住所
-            telnum: 電話番号
+      info:
+        name: 名前
+        address: 住所
+        telnum: 電話番号
             

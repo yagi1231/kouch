@@ -3,6 +3,7 @@ class Reservation < ApplicationRecord
     validates :address, {presence: true}
     validates :telnum, {presence: true}
     validates :order, {presence: true}
+    validates :price, {presence: true}
 
     Reservation.all.sum(:price)
 end
