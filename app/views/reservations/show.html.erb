@@ -1,4 +1,4 @@
-<h3 class="header-title"><%=@reservation.name%>様の注文内容詳細</h3>
+
   <table>
     <tr>
       <th>名前</th>
@@ -7,10 +7,6 @@
     <tr>
       <th>住所</th>
       <td><%= @reservation.address %></td>
-    </tr>
-    <tr>
-      <th>電話番号 <br>(クリックで通過可能)</th>
-      <td><a href="tel:<%= @reservation.telnum %>"><%= @reservation.telnum %></a></td>
     </tr>
     <tr>
       <th>時間</th>
@@ -31,6 +27,10 @@
     <tr>
       <th>備考</th>
       <td><%= @reservation.remarks %></td>
+    </tr>
+     <tr>
+      <th>電話番号 <br>(クリックで通過可能)</th>
+      <td><a href="tel:<%= @reservation.telnum %>"><%= @reservation.telnum %></a></td>
     </tr>
     <tr>
       <th>配達員</th>
@@ -60,4 +60,6 @@
     <li><%= link_to "予約一覧表に戻る", :reservations, class: 'top user btn btn-border-shadow btn-border-shadow--color2' %></li>
   </ul>
 </div>
+
+<h3 class="header-title"><%=@reservation.name%>様の注文内容詳細</h3>
 
