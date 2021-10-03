@@ -1,10 +1,6 @@
 <h3 class="header-title"><%=@reservation.name%>様の注文内容詳細</h3>
   <table>
     <tr>
-      <th>名前</th>
-      <td><%= @reservation.name %>様</td>
-    </tr>
-    <tr>
       <th>住所</th>
       <td><%= @reservation.address %></td>
     </tr>
@@ -61,5 +57,7 @@
   </ul>
 </div>
 
-<h3 class="header-title"><%=@reservation.name%>様の注文内容詳細</h3>
-
+<tr>
+      <th>名前</th>
+      <td><%= @reservation.name %>様</td>
+    </tr>
