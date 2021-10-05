@@ -71,12 +71,70 @@
  
         <tr>
           <th><%= f.label :order ,"注文内容" %></th>
-          <td><%= f.text_field :order ,style: 'width:80%;height:100px;'%></td>
+       <td><div class="box">
+       <input class="input" type="text" name="text" value="×">
+  <button class="button" type="button">テキスト追加</button>
+  <input class="input1" type="text" name="text" value="1">
+  <button class="button1" type="button">テキスト追加</button>
+   <input class="input2" type="text" name="text" value="2">
+   <button class="button2" type="button">テキスト追加</button>
+     <input class="input3" type="text" name="text" value="3">
+     <button class="button3" type="button">テキスト追加</button>
+   <input class="input4" type="text" name="text" value="4">
+   <button class="button4" type="button">テキスト追加</button>
+     <input class="input5" type="text" name="text" value="5">
+     <button class="button5" type="button">テキスト追加</button>
+   <input class="input6" type="text" name="text" value="6">
+   <button class="button6" type="button">テキスト追加</button>
+     <input class="input7" type="text" name="text" value="7">
+     <button class="button7" type="button">テキスト追加</button>
+   <input class="input8" type="text" name="text" value="8">
+   <button class="button8" type="button">テキスト追加</button>
+     <input class="input9" type="text" name="text" value="9">
+     <button class="button9" type="button">テキスト追加</button>
+   <input class="input10" type="text" name="text" value="白">
+   <button class="button10" type="button">テキスト追加</button>
+     <input class="input11" type="text" name="text" value="五穀">
+     <button class="button11" type="button">テキスト追加</button>
+   <input class="input12" type="text" name="text" value="普通">
+   <button class="button12" type="button">テキスト追加</button>
+     <input class="input13" type="text" name="text" value="少">
+     <button class="button13" type="button">テキスト追加</button>
+   <input class="input14" type="text" name="text" value="大">
+   <button class="button14" type="button">テキスト追加</button>
+     <input class="input15" type="text" name="text" value="単品">
+     <button class="button15" type="button">テキスト追加</button>
+   <input class="input16" type="text" name="text" value="D">
+   <button class="button16" type="button">テキスト追加</button>
+     <input class="input17" type="text" name="text" value="（">
+  <button class="button17" type="button">テキスト追加</button>
+   <textarea name="reservation[order]" class="textarea" value="1" cols="50" rows="5" maxlength="15"></textarea>
+</div> </td>
+    
+         
         </tr>
 
         <tr>
           <th><%= f.label :price ,"金額" %></th>
           <td><input type="number" inputmode="numeric" pattern="\d*" name="reservation[price]">円</td>
+        </tr>
+
+        <tr>
+          <th><%= f.label :category ,"カテゴリー（一つのみ選択）" %></th>
+          <td><input type="checkbox" value="KOUCH" name="reservation[category]" class="box">
+          <label for="coding">KOUCH</label><br>
+          <input type="checkbox" value="大戸屋" name="reservation[category]" class="box">
+          <label for="coding">大戸屋</label><br>
+          <input type="checkbox" value="コラボ" name="reservation[category]" class="box">
+          <label for="coding">コラボ</label></td>
+        </tr>
+
+        <tr>
+          <th><%= f.label :category ,"企業or民家（一つのみ選択）" %></th>
+          <td><input type="checkbox" value="企業" name="reservation[categoryname]" class="box">
+          <label for="coding">企業</label><br>
+          <input type="checkbox" value="民家" name="reservation[categoryname]" class="box">
+          <label for="coding">民家</label><br>
         </tr>
         
          <tr>
