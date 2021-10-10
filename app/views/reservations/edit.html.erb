@@ -132,6 +132,14 @@
           <label for="coding">コラボ</label></td>
         </tr>
 
+        <tr>
+          <th><%= f.label :category ,"企業or民家（一つのみ選択）" %></th>
+          <td><input type="checkbox" value="企業" name="reservation[categoryname]" class="box">
+          <label for="coding">企業</label><br>
+          <input type="checkbox" value="民家" name="reservation[categoryname]" class="box">
+          <label for="coding">民家</label><br>
+        </tr>
+
          <tr>
           <th><%= f.label :remarks ,"備考" %></th>
           <td><input type="text" name="reservation[remarks]" placeholder="(例)マップでは出てこない" style="width:300px;height:100px;" value ="<%=@reservation.remarks%>"></td>
