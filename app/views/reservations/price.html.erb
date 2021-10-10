@@ -1,4 +1,4 @@
-<h1 class="price-header">カテゴリー別集計</h1>
+<h1 class="price-header">カテゴリー別集計(KOUCH、コラボのみ）</h1>
 <h3>月別売上</h3>
 <table class="sales_bottom">
   <thead>
@@ -10,7 +10,7 @@
   <tbody>
   <% @sum_price.each do |sum_month,sum_price| %>
       <tr>
-        <td><%= sum_month %>月</td>
+        <td><%= sum_month %></td>
         <td><%= sum_price.to_s(:delimited) %></td>
       </tr>
     <% end %>
@@ -27,7 +27,7 @@
   <tbody>
   <% @ave_price.each do |ave_month,ave_price| %>
       <tr>
-        <td><%= ave_month %>月</td>
+        <td><%= ave_month %></td>
         <td><%= ave_price.round.to_s(:delimited) %></td>
       </tr>
     <% end %>
@@ -44,7 +44,7 @@
   <tbody>
     <% @sum_prices.each do |sum_day,sum_prices| %>
       <tr>
-        <td><%= sum_day %>日</td>
+        <td><%= sum_day %></td>
         <td><%= sum_prices.to_s(:delimited)  %></td>
       </tr>
     <% end %>
@@ -61,7 +61,7 @@
   <tbody>
   <% @ave_prices.each do |ave_day,ave_prices| %>
       <tr>
-        <td><%= ave_day %>日</td>
+        <td><%= ave_day %></td>
         <td><%= ave_prices.round.to_s(:delimited) %></td>
       </tr>
     <% end %>

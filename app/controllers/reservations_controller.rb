@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(params.require(:reservation).permit(:name, :order, :address, :delivery, :price,
-                                                                       :telnum, :time, :backtime, :remarks, :category))
+                                                                       :telnum, :time, :backtime, :remarks, :category, :categoryname))
     if @reservation.save
       redirect_to :reservations
     else
@@ -36,7 +36,7 @@ class ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
     if @reservation.update(params.require(:reservation).permit(:name, :order, :address, :delivery, :price, :telnum,
-                                                               :time, :backtime, :remarks, :category))
+                                                               :time, :backtime, :remarks, :category, :categoryname))
       redirect_to :reservations
     else
       render 'edit'
@@ -51,9 +51,9 @@ class ReservationsController < ApplicationController
   end
 
   def price
-    @ave_prices = Reservation.order(:time).group(:time).average(:price)
-    @sum_prices = Reservation.order(:time).group(:time).sum(:price)
-    @sum_price = Reservation.group('YEAR(time)').group('MONTH(time)').sum(:price)
-    @ave_price = Reservation.group('YEAR(time)').group('MONTH(time)').average(:price)
+    @ave_prices = Reservation.where(category: ['KOUCH','コラボ']).order(:time).group(:time).group(:categoryname).average(:price)
+    @sum_prices = Reservation.where(category: ['KOUCH','コラボ']).order(:time).group(:time).group(:categoryname).sum(:price)
+    @sum_price = Reservation.where(category: ['KOUCH','コラボ']).group('YEAR(time)').group('MONTH(time)').group(:categoryname).sum(:price)
+    @ave_price = Reservation.where(category: ['KOUCH','コラボ']).group('YEAR(time)').group('MONTH(time)').group(:categoryname).average(:price)
   end
 end
