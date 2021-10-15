@@ -16,6 +16,14 @@ ul {
 li{
   text-align:center ;
 }
+#order-btn {
+  display: none;
+}
+
+button {
+  width:30px;
+  border-radius: 100%;
+}
 
 @media screen and (max-width: 480px){
  body {
