@@ -11,16 +11,17 @@
   </head>
 
   <body>
-    <%= render "reservations/shared/head"%>
+    <%= render "shared/head"%>
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
     <div class="content">
       <%= yield %>
     </div>
-    <%= render "reservations/shared/fooder"%>
+    <%= render "shared/fooder"%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
+    
     $(function(){
     //印刷ボタンをクリックした時の処理
     $('.print-btn').on('click', function(){

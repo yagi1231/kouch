@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
-  before_action :authenticate_user, { only: %i[edit update destroy] }
-
+  before_action :authenticate_user!, except: [:index, :new, :create, :show]
+  
   def index
     @q = Reservation.ransack(params[:q])
     @reservations = @q.result(distinct: true).order(:time, :backtime)
@@ -18,7 +18,9 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(params.require(:reservation).permit(:name, :order, :address, :delivery, :price,
                                                                        :telnum, :time, :backtime, :remarks, :category, :categoryname))
+                                                                       
     if @reservation.save
+      flash[:notice] = '登録が完了しました'
       redirect_to :reservations
     else
       render 'new'
@@ -37,6 +39,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     if @reservation.update(params.require(:reservation).permit(:name, :order, :address, :delivery, :price, :telnum,
                                                                :time, :backtime, :remarks, :category, :categoryname))
+      flash[:notice] = '登録が完了しました'                                                         
       redirect_to :reservations
     else
       render 'edit'
@@ -51,9 +54,9 @@ class ReservationsController < ApplicationController
   end
 
   def price
-    @ave_prices = Reservation.where(category: ['KOUCH','コラボ']).order(:time).group(:time).group(:categoryname).average(:price)
-    @sum_prices = Reservation.where(category: ['KOUCH','コラボ']).order(:time).group(:time).group(:categoryname).sum(:price)
-    @sum_price = Reservation.where(category: ['KOUCH','コラボ']).group('YEAR(time)').group('MONTH(time)').group(:categoryname).sum(:price)
-    @ave_price = Reservation.where(category: ['KOUCH','コラボ']).group('YEAR(time)').group('MONTH(time)').group(:categoryname).average(:price)
+    @ave_prices = Reservation.where(category: %w[KOUCH コラボ]).order(:time).group(:time).average(:price)
+    @sum_prices = Reservation.where(category: %w[KOUCH コラボ]).order(:time).group(:time).sum(:price)
+    @sum_price = Reservation.where(category: %w[KOUCH コラボ]).group('YEAR(time)').group('MONTH(time)').sum(:price)
+    @ave_price = Reservation.where(category: %w[KOUCH コラボ]).group('YEAR(time)').group('MONTH(time)').average(:price)
   end
 end
