@@ -1,6 +1,6 @@
 class InfosController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @q = Info.ransack(params[:q])
     @infos = @q.result(distinct: true).order(name: 'DESC')

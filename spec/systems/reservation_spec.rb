@@ -6,7 +6,6 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
     scenario "アカウントを新規登録テスト" do
       visit "users/sign_up"
       fill_in "user[email]", with: "at.saoo@gmail.com"
-      fill_in "user[name]", with: "kouch"
       fill_in "user[password]", with: "a1231t"
       fill_in "user[password_confirmation]", with: "a1231t"
       click_button "登録"

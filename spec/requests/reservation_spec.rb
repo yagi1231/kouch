@@ -139,7 +139,7 @@ RSpec.describe "Reservationrequest", type: :request do
 
       it 'エラーが表示されること' do
         post reservations_url, params: { reservation: FactoryBot.attributes_for(:reservation, :invalid) }
-        expect(response.body).to include 'Nameを入力してください'
+        expect(response.body).to include '名前を入力してください'
       end
     end
   end
@@ -179,7 +179,7 @@ RSpec.describe "Reservationrequest", type: :request do
 
       it 'エラーが表示されること' do
         put reservation_url takashi, params: { reservation: FactoryBot.attributes_for(:reservation, :invalid)}
-        expect(response.body).to include 'Nameを入力してください'
+        expect(response.body).to include '名前を入力してください'
       end
     end
   end

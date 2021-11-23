@@ -7,12 +7,6 @@ RSpec.describe "modelテスト", type: :model do
     expect(user).to be_valid
    end
 
-   it "名前がない場合無効" do
-   user = FactoryBot.build(:user, name: nil)
-   user.valid?
-   expect(user.errors[:name]).to include("を入力してください")
-   end
-
    it "メールアドレスがない場合無効" do
    user = FactoryBot.build(:user, email: nil)
    user.valid?

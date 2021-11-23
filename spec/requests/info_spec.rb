@@ -95,7 +95,7 @@ RSpec.describe "Inforequest", type: :request do
       end
       it 'エラーが表示されること' do
         post infos_url, params: { info: FactoryBot.attributes_for(:info, :invalid) }
-        expect(response.body).to include 'Nameを入力してください'
+        expect(response.body).to include '名前を入力してください'
       end
     end
   end
@@ -135,7 +135,7 @@ RSpec.describe "Inforequest", type: :request do
 
       it 'エラーが表示されること' do
         put info_url ootoya, params: { info: FactoryBot.attributes_for(:info, :invalid)}
-        expect(response.body).to include 'Nameを入力してください'
+        expect(response.body).to include '名前を入力してください'
       end
     end
   end

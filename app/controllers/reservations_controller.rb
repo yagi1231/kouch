@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :new, :create, :show]
-  
+  before_action :authenticate_user!, except: %i[index new create show]
+
   def index
     @q = Reservation.ransack(params[:q])
     @reservations = @q.result(distinct: true).order(:time, :backtime)
@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(params.require(:reservation).permit(:name, :order, :address, :delivery, :price,
                                                                        :telnum, :time, :backtime, :remarks, :category, :categoryname))
-                                                                       
+
     if @reservation.save
       flash[:notice] = '登録が完了しました'
       redirect_to :reservations
@@ -39,7 +39,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     if @reservation.update(params.require(:reservation).permit(:name, :order, :address, :delivery, :price, :telnum,
                                                                :time, :backtime, :remarks, :category, :categoryname))
-      flash[:notice] = '登録が完了しました'                                                         
+      flash[:notice] = '登録が完了しました'
       redirect_to :reservations
     else
       render 'edit'
