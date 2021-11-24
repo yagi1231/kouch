@@ -42,12 +42,12 @@ kouchキッチン、デリバリーは平均年齢が20歳ほどなので電話�
 検索機能(ransnack)  
 
 # 使用技術 
-・Ruby 2.6.3<br>        　　
-・Rails 6.1.4.1<br>       　　
-・MySQL  8.0.26<br>       　　 
+・Ruby 2.6.3<br>
+・Rails 6.1.4.1<br>
+・MySQL  8.0.26<br>
 ・Puma<br>
-・RSpec    　　
-・rubocop      　　
+・RSpec<br>
+・rubocop
 
 # テスト
 ・RSpec    　　
