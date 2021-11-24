@@ -7,7 +7,7 @@
 
 <img width="1678" alt="100000" src="https://user-images.githubusercontent.com/77727362/143256417-5da9d9f2-a6b9-43ce-bb8e-d94925c46555.png">
 
-#　大戸屋とkouchの関係性
+# 大戸屋とkouchの関係性
 このアプリを紹介するにはこの二つの店の関係性を説明しなくてはいけない。
 kouchは大戸屋所沢プロペ通り店をフランチャイズしたオーナーが１から新しい事業として始めたものです。
 大戸屋でも店内とは別にデリバリー事業は行っている。
@@ -50,8 +50,8 @@ kouchキッチン、デリバリーは平均年齢が20歳ほどなので電話�
 ・rubocop
 
 # テスト
-・RSpec    　　
-  単体テスト(model)    　　
-  機能テスト(request)    　　
-  統合テスト(system)    　　
+・RSpec  
+  単体テスト(model)  
+  機能テスト(request)  
+  統合テスト(system)  
 
