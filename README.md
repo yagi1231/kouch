@@ -14,16 +14,16 @@ kouchは大戸屋所沢プロペ通り店をフランチャイズしたオーナ
 お店の場所も2,300mの場所にあるため配達員は4,5人で二つの店を行き来し配達を行っている。
 
 # 使い方
-テストログイン  　　
-Eメール「potepan@gmail.com」  　　
-password「potepan」  　　
+テストログイン  　
+Eメール「potepan@gmail.com」      　　
+password「potepan」  
 
 1、ログインを行う  
 2,電話がかかってきたらンバーガーメニューの「顧客一覧」を選択    　　
-3,お客様にkouchの注文は初めてか確認。初めてなら新規登録、２回目以降なら電話番号を伺う      　　
-4,新規登録、または検索を行い詳細ページ中にある「新規注文画面へ」を選択。      　　
-5,https://kouch-bento.herokuapp.com/reservations/new に移行したら、残りの注文内容、金額、カテゴリー、企業、民家を打ち込みし「登録完了する」を選択     　　
-6,後は、https://kouch-bento.herokuapp.com/reservations に時間順に表示されているので住所や時間、大戸屋とのコラボなどを確認することができる     　　
+3,お客様にkouchの注文は初めてか確認。初めてなら新規登録、２回目以降なら電話番号を伺う    　　
+4,新規登録、または検索を行い詳細ページ中にある「新規注文画面へ」を選択。  　　
+5,https://kouch-bento.herokuapp.com/reservations/new に移行したら、残りの注文内容、金額、カテゴリー、企業、民家を打ち込みし「登録完了する」を選択  
+6,後は、https://kouch-bento.herokuapp.com/reservations に時間順に表示されているので住所や時間、大戸屋とのコラボなどを確認することができる  
 
 またログインは社員さんや限られた人にのみ教えるつもりなのでそれ以外の人は
 https://kouch-bento.herokuapp.com/reservations の新規注文から行う
@@ -42,12 +42,12 @@ kouchキッチン、デリバリーは平均年齢が20歳ほどなので電話�
 検索機能(ransnack)  
 
 # 使用技術 
-・Ruby 2.6.3       　　
+・Ruby 2.6.3          　　
 ・Rails 6.1.4.1        　　
 ・MySQL  8.0.26       　　 
-・Puma        　　
-・RSpec        　　
-・rubocop        　　
+・Puma  　
+・RSpec    　　
+・rubocop       　　
 
 # テスト
 ・RSpec    　　
