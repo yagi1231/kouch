@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    root "users/sessions#new"
   end
   resources :reservations do
     collection do
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :infos
-  root 'reservations#index'
   get 'login' => 'users#login_form'
   post 'login' => 'users#login'
   post 'logout' => 'users#logout'
