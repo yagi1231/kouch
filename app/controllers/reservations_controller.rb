@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :authenticate_user!, except: %i[index new create show]
+  before_action :authenticate_user!, except: %i[index new create show appDescription]
 
   def index
     @q = Reservation.ransack(params[:q])
@@ -58,5 +58,8 @@ class ReservationsController < ApplicationController
     @sum_prices = Reservation.where(category: %w[KOUCH コラボ]).order(:time).group(:time).sum(:price)
     @sum_price = Reservation.where(category: %w[KOUCH コラボ]).group('YEAR(time)').group('MONTH(time)').sum(:price)
     @ave_price = Reservation.where(category: %w[KOUCH コラボ]).group('YEAR(time)').group('MONTH(time)').average(:price)
+  end
+  
+  def appDescription
   end
 end
