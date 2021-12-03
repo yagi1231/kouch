@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_191117) do
+ActiveRecord::Schema.define(version: 2021_12_03_080846) do
 
   create_table "infos", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
@@ -19,7 +19,14 @@ ActiveRecord::Schema.define(version: 2021_11_23_191117) do
     t.string "remark"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
+  end
+
+  create_table "likes", charset: "utf8mb3", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "reservation_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reservations", charset: "utf8mb3", force: :cascade do |t|
@@ -38,17 +45,11 @@ ActiveRecord::Schema.define(version: 2021_11_23_191117) do
     t.string "tel"
     t.string "category"
     t.string "categoryname"
+    t.string "image"
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "telnum"
-    t.string "remark"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "password"
-    t.string "email"
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

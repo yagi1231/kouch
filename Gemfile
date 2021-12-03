@@ -69,3 +69,6 @@ gem 'rubocop-rails', require: false
 gem 'faker'
 gem 'pry-rails'
 gem 'devise'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'font-awesome-sass'

@@ -149,7 +149,11 @@
           <th><%= f.label :remarks ,"備考" %></th>
           <td><input type="text" name="reservation[remarks]" placeholder="(例)マップでは出てこない" style="width:80%;height:100px;" value ="<%=@reservation.remarks%>"></td>
         </tr>
-
+      
+        <tr>
+          <th><%= f.label '画像' %></th>
+          <td><%= f.file_field :image %></td>
+        </tr>
       </table>
  
       <div>

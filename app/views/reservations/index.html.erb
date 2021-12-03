@@ -17,6 +17,7 @@
       <th>時間</th>
       <th>カテゴリー</th>
       <th>配達員</th>
+      <th>配達完了ボタン</th>
     </tr>
   </thead>
   <tbody>
@@ -28,7 +29,12 @@
         <td><%= reservation.time %><br><br><%= reservation.backtime %></td>
         <td><%= reservation.category %></td>
         <td><%= reservation.delivery %></td>
-     </tr>
+        <td>
+          <div id="reservation_<%= reservation.id %>">
+            <%= render 'likes/reservation', reservation: reservation %>
+          </div>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>

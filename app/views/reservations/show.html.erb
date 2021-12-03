@@ -25,10 +25,6 @@
       <td><%= @reservation.price.to_s(:delimited) %>円</td>
     </tr>
     <tr>
-      <th>備考</th>
-      <td><%= @reservation.remarks %></td>
-    </tr>
-    <tr>
       <th>カテゴリー</th>
       <td><%= @reservation.category%></td>
     </tr>
@@ -40,7 +36,21 @@
       <th>配達員</th>
       <td><%= @reservation.delivery %></td>
     </tr>
+     <tr>
+      <th>備考</th>
+      <td><%= @reservation.remarks %></td>
+    </tr>
+    <tr>
+      <th>画像</th>
+      <td><% if @reservation.image? %>
+          <%= image_tag @reservation.image.url %>
+        <% else %>
+          <%= image_tag '/assets/reservation.jpg' %>
+        <% end %>
+      </td>
+    </tr>
   </table>
+  
 <div class="print-area">
   <div class="receipt">
     <ul>

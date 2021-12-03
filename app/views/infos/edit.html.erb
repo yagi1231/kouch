@@ -18,6 +18,10 @@
         <th><%= f.label :remarks ,"備考" %></th>
         <td><input type="text" name="info[remark]" placeholder="(例)新住所でマップでは出てこないので" style="width:80%;height:100px;" value="<%=@info.remark%>"></td>
       </tr>
+      <tr>
+          <th><%= f.label '画像' %></th>
+          <td><%= f.file_field :image %></td>
+        </tr>
     </table>
     <div>
       <ul>

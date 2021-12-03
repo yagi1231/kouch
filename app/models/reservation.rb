@@ -8,4 +8,9 @@ class Reservation < ApplicationRecord
   validates :price, { presence: true }
   validates :category, { presence: true }
   validates :categoryname, { presence: true }
+
+  # 以下の1行を追記
+  has_many :likes
+  belongs_to :user
+  mount_uploader :image, ImageUploader
 end
