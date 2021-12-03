@@ -11,6 +11,5 @@ class Reservation < ApplicationRecord
 
   # 以下の1行を追記
   has_many :likes
-  belongs_to :user
   mount_uploader :image, ImageUploader
 end
