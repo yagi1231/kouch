@@ -37,10 +37,17 @@
   }
 
   .receipt-company {
-      float:right;
-      margin-right:50px;
+    float:right;
+    margin-right:50px;
   }
 
   .print-off {
-      display: none;
-    }
+    display: none;
+  }
+
+  button.print-btn {
+    width:150px;
+    height:50px;
+    margin:5px;
+    border-radius: 100%;
+  }

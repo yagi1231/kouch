@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!, except: %i[appDescription]
-  
+
   def index
     @q = Reservation.ransack(params[:q])
     @reservations = @q.result(distinct: true).page(params[:page]).per(5).order(:time, :backtime)
@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(params.require(:reservation).permit(:name, :order, :address, :delivery, :price,
-                                                                       :telnum, :time, :backtime, :remarks, :category, :categoryname,:image))
+                                                                       :telnum, :time, :backtime, :remarks, :category, :categoryname, :image))
 
     if @reservation.save
       flash[:notice] = '登録が完了しました'
@@ -39,7 +39,7 @@ class ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
     if @reservation.update(params.require(:reservation).permit(:name, :order, :address, :delivery, :price, :telnum,
-                                                               :time, :backtime, :remarks, :category, :categoryname,:image))
+                                                               :time, :backtime, :remarks, :category, :categoryname, :image))
       flash[:notice] = '登録が完了しました'
       redirect_to :reservations
     else
@@ -60,7 +60,7 @@ class ReservationsController < ApplicationController
     @sum_price = Reservation.where(category: %w[KOUCH コラボ]).group('YEAR(time)').group('MONTH(time)').sum(:price)
     @ave_price = Reservation.where(category: %w[KOUCH コラボ]).group('YEAR(time)').group('MONTH(time)').average(:price)
   end
-  
-  def appDescription
+
+  def appDescription 
   end
 end

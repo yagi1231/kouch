@@ -3,7 +3,7 @@ class InfosController < ApplicationController
 
   def index
     @q = Info.ransack(params[:q])
-    @infos = @q.result(distinct: true).order(name: 'DESC')
+    @infos = @q.result(distinct: true).page(params[:page]).per(5).order(name: 'DESC')
   end
 
   def new
@@ -11,7 +11,7 @@ class InfosController < ApplicationController
   end
 
   def create
-    @info = Info.new(params.require(:info).permit(:name, :address, :telnum, :remark))
+    @info = Info.new(params.require(:info).permit(:name, :address, :telnum, :remark, :image))
     if @info.save
       flash[:notice] = 'ユーザー登録が完了しました'
       redirect_to("/infos/#{@info.id}")
@@ -30,7 +30,7 @@ class InfosController < ApplicationController
 
   def update
     @info = Info.find(params[:id])
-    if @info.update(params.require(:info).permit(:name, :address, :telnum, :remark))
+    if @info.update(params.require(:info).permit(:name, :address, :telnum, :remark, :image))
       flash[:notice] = 'ユーザー編集が完了しました'
       redirect_to :infos
     else

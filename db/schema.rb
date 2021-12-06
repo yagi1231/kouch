@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_03_080846) do
+ActiveRecord::Schema.define(version: 2021_12_06_151243) do
 
   create_table "infos", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
@@ -38,11 +38,9 @@ ActiveRecord::Schema.define(version: 2021_12_03_080846) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "telnum"
     t.string "backtime"
-    t.string "emarks"
     t.string "order"
     t.string "time"
     t.string "remarks"
-    t.string "tel"
     t.string "category"
     t.string "categoryname"
     t.string "image"

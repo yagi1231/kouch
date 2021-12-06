@@ -7,6 +7,9 @@
 
 <img width="1678" alt="100000" src="https://user-images.githubusercontent.com/77727362/143256417-5da9d9f2-a6b9-43ce-bb8e-d94925c46555.png">
 
+# ER図
+<img width="492" alt="20001" src="https://user-images.githubusercontent.com/77727362/144872349-f314c055-ce8c-47b8-91cf-57c967458472.png">
+
 # 大戸屋とkouchの関係性
 このアプリを紹介するにはこの二つの店の関係性を説明しなくてはいけない。  
 kouchは大戸屋所沢プロペ通り店をフランチャイズしたオーナーが１から新しい事業として始めたものです。  
@@ -22,10 +25,6 @@ kouchは大戸屋所沢プロペ通り店をフランチャイズしたオーナ
 5,https://kouch-bento.herokuapp.com/reservations/new に移行したら、残りの注文内容、金額、カテゴリー、企業、民家を打ち込みし「登録完了する」を選択  
 6,https://kouch-bento.herokuapp.com/reservations に時間順に表示されているので住所や時間、大戸屋とのコラボなどを確認することができる  
 
-またお客様の個人情報漏洩を少しでも低くする為  
-ログインは社員さんや限られた人にのみ教えるつもりなのでそれ以外の人は
-https://kouch-bento.herokuapp.com/reservations の新規注文から行えるようになっている。
-
 # こだわりポイント
 こだわりポイントは注文内容の中にある省略ボタンです。   
 これはスマートフォン、タブレット端末で操作する時に使用することを想定しておりパソコンだとあまり意味がないです。  
@@ -39,7 +38,9 @@ kouchキッチン、デリバリーは平均年齢が20歳ほどなので電話�
 ユーザー登録、ログイン機能（devise)  
 検索機能(ransnack)  
 CRUD機能  
-いいね機能(Ajax)
+いいね機能(Ajax)  
+ペーネーション(kaminari)  
+画像投稿（carrierwave,rmagick)  
 
 # 使用技術 
 ・Ruby 2.6.3  
