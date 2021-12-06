@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
   
   def index
     @q = Reservation.ransack(params[:q])
-    @reservations = @q.result(distinct: true).order(:time, :backtime)
+    @reservations = @q.result(distinct: true).page(params[:page]).per(5).order(:time, :backtime)
   end
 
   def new
