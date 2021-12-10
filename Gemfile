@@ -69,9 +69,10 @@ gem 'rubocop-rails', require: false
 gem 'faker'
 gem 'pry-rails'
 gem 'devise'
-gem 'carrierwave'
+gem 'carrierwave', '~> 2.0'
 gem 'rmagick'
 gem 'font-awesome-sass'
 gem 'kaminari'
 gem 'fog-aws'
 gem 'dotenv-rails'
+gem "aws-sdk-s3", require: false
