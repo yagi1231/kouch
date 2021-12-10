@@ -42,7 +42,8 @@
     </tr>
     <tr>
       <th>画像</th>
-      <td><%= image_tag @reservation.image.to_s %>
+      <td>
+          <%= image_tag @reservation.image.url %>
       </td>
     </tr>
   </table>

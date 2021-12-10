@@ -2,30 +2,36 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
-  if Rails.env.development?
-    storage :file
-  elsif Rails.env.test?
-    storage :file
-  else
-    storage :fog
-  end
+  
+    storage :fog # 本番環境のみ
+ 
+  include CarrierWave::RMagick
 
+  #上限変更
+    process :resize_to_limit => [300, 700]
+  
+  #サムネイルを生成
+    version :thumb do
+      process :resize_to_limit => [300, 300]
+    end
+  
+  # jpg,jpeg,gif,pngのみ
+    def extension_white_list
+      %w(jpg jpeg gif png)
+    end
+  
+  #ファイル名を変更し拡張子を同じにする
+    def filename
+      super.chomp(File.extname(super)) + '.jpg' 
+    end
+  
+
+  # Choose what kind of storage to use for this uploader:
+  # Override the directory where uploaded files will be stored.
+  # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-
-  def extension_whitelist
-    %w(png jpg)
-  end
-
-  def filename
-    original_filename if original_filename
-  end
-  # Choose what kind of storage to use for this uploader:
-  # storage :fog
-
-  # Override the directory where uploaded files will be stored.
-  # This is a sensible default for uploaders that are meant to be mounted:
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
@@ -58,4 +64,5 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  
 end
