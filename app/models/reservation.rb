@@ -8,6 +8,7 @@ class Reservation < ApplicationRecord
   validates :price, { presence: true }
   validates :category, { presence: true }
   validates :categoryname, { presence: true }
+  
   mount_uploader :image, ImageUploader
   has_many :likes
 end
