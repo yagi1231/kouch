@@ -42,7 +42,13 @@
     </tr>
     <tr>
       <th>画像</th>
-      <td><%= image_tag @reservation.image.url %></td>
+      <td>
+        <% if @reservation.image? %>
+          <%= image_tag @reservation.image.url %>
+        <% else %>
+          <%= image_tag '/assets/default.png' %>
+        <% end %>
+      </td>
     </tr>
   </table>
   

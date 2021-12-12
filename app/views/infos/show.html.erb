@@ -19,7 +19,13 @@
       </tr>
       <tr>
         <th>画像</th>
-        <td><td><%= image_tag @info.image.url %></td>
+        <td>
+          <% if @info.image? %>
+            <%= image_tag @info.image.url %>
+          <% else %>
+            <%= image_tag '/assets/default.png' %>
+          <% end %>
+        </td>
       </tr>
     </table>
     <input type="submit" value="新規注文画面へ"class="submit user" >

@@ -27,7 +27,11 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
     end
 
     scenario '新規登録' do
-      visit root_path
+      visit "users/sign_in"
+      fill_in "user[email]", with: "at.sao@gmail.com"
+      fill_in "user[password]", with: "aaaaaa"
+      click_on 'ログイン'
+      expect(page).to have_content 'ログインしました。'
       click_on "新規注文"
       fill_in "reservation[name]", with: "KOUCH"
       fill_in "reservation[address]", with: "埼玉県"
@@ -81,21 +85,33 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
     end
 
     scenario "検索機能テスト" do
-      visit root_path
+      visit "users/sign_in"
+      fill_in "user[email]", with: "at.sao@gmail.com"
+      fill_in "user[password]", with: "aaaaaa"
+      click_on 'ログイン'
+      expect(page).to have_content 'ログインしました。'
       fill_in 'q[name_or_telnum_or_address_cont]', with: 'kouch'
       click_on "検索"
       expect(page).to have_content 'kouch'
     end
 
     scenario "トップページへの確認ボタン"do
-      visit root_path
+    visit "users/sign_in"
+    fill_in "user[email]", with: "at.sao@gmail.com"
+    fill_in "user[password]", with: "aaaaaa"
+    click_on 'ログイン'
+    expect(page).to have_content 'ログインしました。'
       click_on "kouch"
       click_on "予約一覧表に戻る"
       expect(current_path).to eq reservations_path
     end
 
     scenario "ボタンの確認"do 
-      visit root_path
+    visit "users/sign_in"
+    fill_in "user[email]", with: "at.sao@gmail.com"
+    fill_in "user[password]", with: "aaaaaa"
+    click_on 'ログイン'
+    expect(page).to have_content 'ログインしました。'
       click_on "新規注文"
       find(".button").click
       expect(page).to have_text("×")
@@ -113,7 +129,11 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
     end
 
     scenario "発信テスト"do
-      visit root_path
+      visit "users/sign_in"
+      fill_in "user[email]", with: "at.sao@gmail.com"
+      fill_in "user[password]", with: "aaaaaa"
+      click_on 'ログイン'
+      expect(page).to have_content 'ログインしました。'
       click_on '0900000000'
     end
 
