@@ -84,4 +84,21 @@ RSpec.describe 'Infosystems', js: true, type: :system do
     expect(page.accept_confirm).to eq "この情報で登録しますか？"
     expect(page).to have_content '登録が完了しました'
   end
+
+  scenario "ペーネーションの確認"do
+    sign_in(user)
+    info_up(info)
+    info_up(info)
+    info_up(info)
+    info_up(info)
+    info_up(info)
+    expect{ find_link('2', rel="next").click }
+    page_up(info)
+    expect{ find_link('1', rel="prev").click }
+    page_up(info)
+    expect{ find_link('Last', ".page-link").click }
+    page_up(info)
+    expect{ find_link('First', ".page-link").click }
+    page_up(info)
+  end
 end

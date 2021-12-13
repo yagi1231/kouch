@@ -130,14 +130,14 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
     expect(page).to have_css '.like-btn'
     expect(page).to have_css "a.like-link", text: '0'
   end
-
-  scenario "ペーネーションの確認"do
+  
+  scenario "ペーネーションは5つから表示される"do
   sign_in(user)
-  definition_up(reservation)
-  definition_up(reservation)
-  definition_up(reservation)
-  definition_up(reservation)
-  definition_up(reservation)
+  reservation_up(reservation)
+  reservation_up(reservation)
+  reservation_up(reservation)
+  reservation_up(reservation)
+  reservation_up(reservation)
   expect{ find_link('2', rel="next").click }
   page_up(reservation)
   expect{ find_link('1', rel="prev").click }
@@ -146,5 +146,14 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
   page_up(reservation)
   expect{ find_link('First', ".page-link").click }
   page_up(reservation)
+  end
+
+  scenario "ペーネーション5つ以下では表示されない"do
+  sign_in(user)
+  reservation_up(reservation)
+  reservation_up(reservation)
+  reservation_up(reservation)
+  reservation_up(reservation)
+  expect(page).to have_no_css '.pagination'
   end
 end

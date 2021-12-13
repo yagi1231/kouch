@@ -30,7 +30,8 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
-  config.include DefinitionUpSupport
+  config.include ReservationUpSupport
+  config.include InfoUpSupport
   config.include PageUpSupport
   config.include SignInSupport
   config.include Devise::Test::IntegrationHelpers, type: :request 

@@ -1,5 +1,5 @@
-module DefinitionUpSupport
-    def definition_up(reservation)
+module ReservationUpSupport
+    def reservation_up(reservation)
       visit new_reservation_path
       fill_in "reservation[name]", with: "KOUCH"
       fill_in "reservation[address]", with: "埼玉県"
