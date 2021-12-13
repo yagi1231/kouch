@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Reservationmodel", type: :model do 
-
+    
    it "名前、住所、電話、日付、時間、注文、金額、カテゴリー、企業or民家、備考がある場合有効" do
     reservation = FactoryBot.build(:reservation)
     expect(reservation).to be_valid

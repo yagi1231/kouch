@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe "Infomodel", type: :model do 
 
+   before do
+      info = Info.new(
+        image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'app/assets/images/default.png')),
+      )
+    end
+
    it "名前、住所、電話、がある場合有効" do
     info = FactoryBot.build(:info)
     expect(info).to be_valid
