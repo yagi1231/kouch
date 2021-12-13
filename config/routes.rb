@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    root "users/sessions#new"
   end
   resources :reservations do
     collection do
@@ -9,7 +10,6 @@ Rails.application.routes.draw do
     end
   end
   resources :infos
-  root "reservations#appDescription"
   post "reservations/new" => "reservations#new"
   post "reservations/create" => "reservations#create"
   post 'like/:id' => 'likes#create', as: 'create_like'
