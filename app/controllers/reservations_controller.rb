@@ -60,7 +60,4 @@ class ReservationsController < ApplicationController
     @sum_price = Reservation.where(category: %w[KOUCH コラボ]).group('YEAR(time)').group('MONTH(time)').sum(:price)
     @ave_price = Reservation.where(category: %w[KOUCH コラボ]).group('YEAR(time)').group('MONTH(time)').average(:price)
   end
-
-  def appDescription 
-  end
 end

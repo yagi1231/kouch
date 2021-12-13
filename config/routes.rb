@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :reservations do
     collection do
       get 'price'
-      get 'appDescription'
     end
   end
   resources :infos
