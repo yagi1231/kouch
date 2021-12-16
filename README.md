@@ -7,7 +7,7 @@
 レスポンシブに対応しているのでスマホから確認することも可能です。  
 金額を打ち込めば日別、月別での売り上げ表示が可能です。  
 
-<img width="1171" alt="1214" src="https://user-images.githubusercontent.com/77727362/146305993-b000b711-53de-41b4-adc0-caf4d92cffd9.png">
+<img width="1680" alt="スクリーンショット 2021-12-16 14 06 19" src="https://user-images.githubusercontent.com/77727362/146311721-42969e83-dcb0-425c-a4d0-e61a92683eca.png">
 
 # ER図
 <img width="492" alt="20001" src="https://user-images.githubusercontent.com/77727362/144872349-f314c055-ce8c-47b8-91cf-57c967458472.png">
