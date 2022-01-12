@@ -1,0 +1,69 @@
+<h1 class="price-header">カテゴリー別集計(KOUCH、コラボのみ）</h1>
+<h3>月別売上</h3>
+<table class="sales_bottom">
+  <thead>
+    <tr>
+      <th>日付（月別）</th>
+      <th>月別売上</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @sum_price.each do |sum_month,sum_price| %>
+      <tr>
+        <td><%= sum_month %></td>
+        <td><%= sum_price.to_s(:delimited) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h3>月別平均</h3>
+<table class="sales_bottom">
+  <thead>
+    <tr>
+      <th>日付（月別）</th>
+      <th>月別１件毎平均</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @ave_price.each do |ave_month,ave_price| %>
+      <tr>
+        <td><%= ave_month %></td>
+        <td><%= ave_price.round.to_s(:delimited) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h3>日別売上</h3>
+<table class="sales_bottom">
+  <thead>
+    <tr>
+      <th>日付（日別）</th>
+      <th>日別売上</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sum_prices.each do |sum_day,sum_prices| %>
+      <tr>
+        <td><%= sum_day %></td>
+        <td><%= sum_prices.to_s(:delimited)  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+<table>
+<h3>日別平均</h3>
+<table class="sales_bottom">
+  <thead>
+    <tr>
+      <th>日付（月別）</th>
+      <th>日別１件毎平均</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @ave_prices.each do |ave_day,ave_prices| %>
+      <tr>
+        <td><%= ave_day %></td>
+        <td><%= ave_prices.round.to_s(:delimited) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

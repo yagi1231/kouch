@@ -1,5 +1,9 @@
 current directory: /Users/aoyagiju/Desktop/kouch/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
+<<<<<<< HEAD
 /Users/aoyagiju/.rbenv/versions/2.6.3/bin/ruby -I /Users/aoyagiju/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210911-45087-3i2p4m.rb extconf.rb
+=======
+/Users/aoyagiju/.rbenv/versions/2.6.3/bin/ruby -I /Users/aoyagiju/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20211128-17752-15ali0d.rb extconf.rb
+>>>>>>> kouch4
 creating Makefile
 
 current directory: /Users/aoyagiju/Desktop/kouch/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
@@ -77,4 +81,8 @@ linking shared-object sassc/libsass.bundle
 
 current directory: /Users/aoyagiju/Desktop/kouch/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
 make DESTDIR\= install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 libsass.bundle ./.gem.20210911-45087-tnyel2/sassc
+=======
+/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20211128-17752-14zum55/sassc
+>>>>>>> kouch4

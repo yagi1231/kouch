@@ -1,13 +1,9 @@
 class Info < ApplicationRecord
-  validates :name, {presence: true}
-  validates :address, {presence: true}
-  validates :telnum, {presence: true}
+  VALID_PHONE_NUMBER_REGEX = /\A0[5789]0[-]?\d{4}[-]?\d{4}\z/
+  VALID_ADDRESS_REGER = /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/
+  validates :name, { presence: true }
+  validates :address,  presence: true, format: { with: VALID_ADDRESS_REGER }
+  validates :telnum,  presence: true, format: { with: VALID_PHONE_NUMBER_REGEX }
 
-  def user
-    return User.find_by(id: self.user_id)
-  end
-  
-  scope :get_by_telnum, ->(telnum) {
-    where("telnum like ?", "%#{telnum}%")
-  }
+  mount_uploader :image, ImageUploader
 end

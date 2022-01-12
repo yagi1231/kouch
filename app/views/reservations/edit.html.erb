@@ -1,26 +1,70 @@
 <h3 class="header-title">注文内容変更</h3>
+ <%= render "shared/error", obj: @reservation %>
  
     <%= form_for @reservation do |f| %>
       <table>
         <tr>
-          <th><%= f.label :name ,"名前" %></th>
-          <td><%= f.text_field :name %>様</td>
+        <th><%= f.label :time ,"配達員" %></th>
+        <td><input type="text" name="reservation[delivery]" list="delivery" value="<%=@reservation.delivery%>">
+          <datalist id="delivery">
+            <option value="青柳樹"></option>
+            <option value="うーちゃん"></option>
+            <option value="まこちゃん"></option>
+            <option value="小野"></option>
+            <option value="修太"></option>
+            <option value="もとき"></option>
+            <option value="純平"></option>
+            <option value="健太"></option>
+            <option value="くすま"></option>
+            <option value="小杉"></option>
+            <option value="元"></option>
+            <option value="ジャーミン"></option>
+            <option value="鈴木"></option>
+            <option value="ヨシ"></option>
+            <option value="勇二"></option>
+            <option value="大城"></option>
+            <option value="大輝"></option>
+            <option value="小川"></option>
+            <option value="貴一"></option>
+            <option value="浜岡"></option>
+            <option value="優月"></option>
+            <option value="幕内"></option>
+            <option value="まゆ"></option>
+            <option value="宮崎"></option>
+            <option value="フミヤ"></option>
+            <option value="もも"></option>
+            <option value="ゆあさ"></option>
+            <option value="優"></option>
+            <option value="石井"></option>
+            <option value="尾崎"></option>
+            <option value="ルカ"></option>
+            <option value="PANYA"></option>
+            <option value="ARATA"></option>
+            <option value="Gota"></option>
+            <option value="鹿島"></option>
+            <option value="けんしん"></option>
+            <option value="優（田村）"></option>
+         </datalist>
+        <tr>
+
+          <th><%= f.label :name ,"名前" %><br>(⚠️カタカナ入力)</th>
+          <td><%= f.text_field :name, placeholder:"カタカナ入力"%>様</td>
         </tr>
  
-        <tr>
+         <tr>
           <th><%= f.label :address ,"住所" %></th>
           <td><%= f.text_field :address %></td>
-        </tr>
+         </tr>
 
 
          <tr>
           <th><%= f.label :telnum ,"電話番号" %></th>
           <td><input type="tel" inputmode="numeric" pattern="\d*" name="reservation[telnum]" value="<%=@reservation.telnum%>"></td>
-        </tr>
+         </tr>
 
 
          <tr>
-          <th><%= f.label :time ,"日にち-時間" %></th>
+          <th><%= f.label :time ,"日付-時間" %></th>
           <td><input type="date" name="reservation[time]" value ="<%=@reservation.time%>"> -
           <input type="text" name="reservation[backtime]" min="11:00" max="21:00" list="time-list" value="<%=@reservation.backtime%>">
           　　 <datalist id="time-list">
@@ -70,7 +114,7 @@
  
         <tr>
           <th><%= f.label :order ,"注文内容" %></th>
-          <td><%= f.text_field :order ,style: 'width:400px;height:100px;'%></td>
+          <td><%= f.text_field :order ,style: 'width:80%;height:100px;'%></td>
         </tr>
 
         <tr>
@@ -78,54 +122,33 @@
           <td><input type="number" inputmode="numeric" pattern="\d*" name="reservation[price]" value="<%=@reservation.price%>">円</td>
         </tr>
 
-
          <tr>
-          <th><%= f.label :remarks ,"備考" %></th>
-          <td><input type="text" name="reservation[remarks]" placeholder="(例)新住所でマップでは出てこないので、、、など" style="width:400px;height:100px;" value ="<%=@reservation.remarks%>"></td>
+          <th><%= f.label :category ,"カテゴリー（一つのみ選択）" %></th>
+          <td><input type="checkbox" value="KOUCH" name="reservation[category]" class="box">
+          <label for="coding">KOUCH</label><br>
+          <input type="checkbox" value="大戸屋" name="reservation[category]" class="box">
+          <label for="coding">大戸屋</label><br>
+          <input type="checkbox" value="コラボ" name="reservation[category]" class="box">
+          <label for="coding">コラボ</label></td>
         </tr>
 
         <tr>
-          <th><%= f.label :time ,"配達員" %></th>
-          <td><input type="text" name="reservation[delivery]" list="delivery" value="<%=@reservation.delivery%>">
-          　　 <datalist id="delivery">
-                <option value="青柳樹"></option>
-                <option value="うーちゃん"></option>
-                <option value="まこちゃん"></option>
-                <option value="小野"></option>
-                <option value="修太"></option>
-                <option value="もとき"></option>
-                <option value="純平"></option>
-                <option value="健太"></option>
-                <option value="くすま"></option>
-                <option value="小杉"></option>
-                <option value="元"></option>
-                <option value="ジャーミン"></option>
-                <option value="鈴木"></option>
-                <option value="ヨシ"></option>
-                <option value="勇二"></option>
-                <option value="大城"></option>
-                <option value="大輝"></option>
-                <option value="小川"></option>
-                <option value="貴一"></option>
-                <option value="浜岡"></option>
-                <option value="優月"></option>
-                <option value="幕内"></option>
-                <option value="まゆ"></option>
-                <option value="宮崎"></option>
-                <option value="フミヤ"></option>
-                <option value="もも"></option>
-                <option value="ゆあさ"></option>
-                <option value="優"></option>
-                <option value="石井"></option>
-                <option value="尾崎"></option>
-                <option value="ルカ"></option>
-                <option value="PANYA"></option>
-                <option value="ARATA"></option>
-                <option value="Gota"></option>
-                <option value="鹿島"></option>
-                <option value="けんしん"></option>
-                <option value="優（田村）"></option>
-             </datalist>
+          <th><%= f.label :category ,"企業or民家（一つのみ選択）" %></th>
+          <td><input type="checkbox" value="企業" name="reservation[categoryname]" class="box">
+          <label for="coding">企業</label><br>
+          <input type="checkbox" value="民家" name="reservation[categoryname]" class="box">
+          <label for="coding">民家</label><br>
+        </tr>
+
+         <tr>
+          <th><%= f.label :remarks ,"備考" %></th>
+          <td><input type="text" name="reservation[remarks]" placeholder="(例)マップでは出てこない" style="width:80%;height:100px;" value ="<%=@reservation.remarks%>"></td>
+        </tr>
+
+        <tr>
+          <th><%= f.label '画像' %></th>
+          <td><%= f.file_field :image %></td>
+        </tr>
       </table>
  
       <div>

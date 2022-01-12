@@ -1,6 +1,5 @@
-require_relative "boot"
-
-require "rails/all"
+require_relative 'boot'
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -20,5 +19,6 @@ module Kouch
     # config.eager_load_paths << Rails.root.join("extras")
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
   end
 end

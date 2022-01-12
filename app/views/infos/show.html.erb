@@ -3,19 +3,29 @@
     <table>
       <tr>
         <th>名前</th>
-        <td><input name="name"style="border:solid 0px"value="<%=@info.name%>"readonly></td>
+        <td><input name="name"style="border:solid 0px"value="<%=@info.name%>"readonly>様</td>
       </tr>
        <tr>
         <th>住所</th>
         <td><input name="address"style="border:solid 0px"value="<%=@info.address%>"readonly></td>
       </tr>
        <tr>
-        <th>電話番号</th>
+        <th>電話番号<br>(クリックしてして通話可能)</th>
         <td><input name="telnum"style="border:solid 0px"value="<%=@info.telnum%>"readonly></td>
       </tr>
        <tr>
         <th>備考</th>
-        <td><input name="remark"style="border:solid 0px"value="<%=@info.remark%>"readonly></td>
+        <td><input name="remark"style="border:solid 0px;width:100%;text-align:center;"value="<%=@info.remark%>"readonly></td>
+      </tr>
+      <tr>
+        <th>画像</th>
+        <td>
+          <% if @info.image? %>
+            <%= image_tag @info.image.url %>
+          <% else %>
+            <%= image_tag '/assets/default.png' %>
+          <% end %>
+        </td>
       </tr>
     </table>
     <input type="submit" value="新規注文画面へ"class="submit user" >
@@ -23,7 +33,7 @@
 
   <div>
     <ul>
-     　<li><%= link_to "削除", :reservation, method: :delete, data:{confirm:"本当に削除しますか？"}, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>
+     　<li><%= link_to "削除", :info, method: :delete, data:{confirm:"本当に削除しますか？"}, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>
       <li><%= link_to '編集', :edit_info, class: 'edit user btn btn-border-shadow btn-border-shadow--color2'%></li>
       <li><%= link_to "お客様情報一覧に戻る", :infos, class: 'top user btn btn-border-shadow btn-border-shadow--color2' %></li>
     </ul>

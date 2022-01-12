@@ -1,0 +1,34 @@
+<div class="header">
+  <div class="topbar">
+    <%= link_to "KOUCH",:reservations, class:"header-logo"%>
+    <header>
+       <div class="header-logo-menu">
+         <div id="nav-drawer">
+           <input id="nav-input" type="checkbox" class="nav-unshown">
+           <label id="nav-open" for="nav-input"><span></span></label>
+           <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+           <div id="nav-content">
+             <p class="hambergermenu">メニュー一覧</p>
+               <% if user_signed_in? %>
+                 <%=link_to "予約一覧表", :reservations, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"},id: "logout_submit", class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2' %> 
+                 <%=link_to "お客様情報一覧", :infos, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+                 <%=link_to "新規お客様情報入力", :new_info, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+                 <%=link_to "売上", :price_reservations, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+               <% else %>
+                  <%=link_to "予約一覧表", :reservations, class:'sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2'%>
+                  <%= link_to "ログイン", new_user_session_path, class:'post sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2' %> 
+                  <%= link_to "新規登録", new_user_registration_path, class:'post sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2' %>
+                  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class:'post sidemenu topmenu btn btn-border-shadow btn-border-shadow--color2' %>
+               <% end %>
+           </div>
+         </div>
+       </div>
+    </header>  
+  </div>
+  <div class="flassh_message">
+    <% flash.each do |message_type, message| %>
+      <%= message %>
+    <% end %>
+  </div>
+</div>

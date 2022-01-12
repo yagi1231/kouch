@@ -1,5 +1,9 @@
 current directory: /Users/aoyagiju/Desktop/kouch/vendor/bundle/ruby/2.6.0/gems/ffi-1.15.4/ext/ffi_c
+<<<<<<< HEAD
 /Users/aoyagiju/.rbenv/versions/2.6.3/bin/ruby -I /Users/aoyagiju/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210911-45087-b5xasd.rb extconf.rb
+=======
+/Users/aoyagiju/.rbenv/versions/2.6.3/bin/ruby -I /Users/aoyagiju/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20211128-17752-1s66rgy.rb extconf.rb
+>>>>>>> kouch4
 checking for ffi_prep_closure_loc() in -lffi... yes
 checking for ffi_prep_cif_var()... yes
 checking for ffi_raw_call()... yes
@@ -40,4 +44,8 @@ linking shared-object ffi_c.bundle
 
 current directory: /Users/aoyagiju/Desktop/kouch/vendor/bundle/ruby/2.6.0/gems/ffi-1.15.4/ext/ffi_c
 make DESTDIR\= install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 ffi_c.bundle ./.gem.20210911-45087-pnkk0o
+=======
+/usr/bin/install -c -m 0755 ffi_c.bundle ./.gem.20211128-17752-17w2yo3
+>>>>>>> kouch4

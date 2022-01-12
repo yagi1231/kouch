@@ -31,8 +31,13 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
+<<<<<<< HEAD
 sitearchdir = $(DESTDIR)./.gem.20210911-43256-madopz
 sitelibdir = $(DESTDIR)./.gem.20210911-43256-madopz
+=======
+sitearchdir = $(DESTDIR)./.gem.20211128-17752-a88lc3
+sitelibdir = $(DESTDIR)./.gem.20211128-17752-a88lc3
+>>>>>>> kouch4
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)

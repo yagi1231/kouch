@@ -17,21 +17,50 @@ li{
   text-align:center ;
 }
 
+#order-btn {
+  display: none;
+}
+
+#reservation_image {
+ margin:0 auto;
+}
+
+button {
+  width:110px;
+  height:50px;
+  margin:10px 30px;
+  border-radius: 100%;
+}
+
 @media screen and (max-width: 480px){
  body {
-   width:812px;
+   width:100%;
  }
+
  .content { 
   border-radius:.25em;
   box-sizing:border-box;
   left:50%;
-  
   text-align:center;
   top:50%;
+ }
+
+ button {
+  width:50px;
+  height:30px;
+  margin:5px;
+  border-radius: 100%;
+}
+#info_image {
+  width:100%;
+}
+#reservation_image {
+  width:80%;
 }
 }
 
 @media screen and (max-width: 1024px){
+
 .submit {
   border-radius: 100vh;
   -webkit-box-shadow: 3px 3px 0 #78e5e5;
@@ -40,7 +69,26 @@ li{
   width:45%;
   background-color: white;
 }
+
+.user {
+  margin-top:30px;
+  font-size:24px;
 }
+
+button {
+  width:50px;
+  height:50px;
+  margin:5px;
+  border-radius: 100%;
+}
+
+.submit.user {
+  width:300px;
+}
+}
+
+
+
 
 
 

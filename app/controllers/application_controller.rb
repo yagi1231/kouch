@@ -1,20 +1,15 @@
 class ApplicationController < ActionController::Base
-    before_action :set_current_user
-    def set_current_user
-      @current_user = User.find_by(id: session[:user_id])
-    end
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-    def authenticate_user
-      if @current_user == nil
-        flash[:notice] = "ログインが必要です"
-        redirect_to("/login")
-      end
-    end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name]) # 新規登録時(sign_up時)にnameというキーのパラメーターを追加で許可する
+  end
 
-    def forbid_login_user
-        if @current_user
-          flash[:notice] = "すでにログインしています"
-          redirect_to("/reservations")
-        end
-      end
+  def after_sign_in_path_for(resource)
+    reservations_path
+  end
+
+  def after_sign_out_path_for(resource)
+    new_user_session_path 
+  end
 end
