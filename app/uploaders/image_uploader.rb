@@ -2,23 +2,20 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
-  if Rails.env.production?
-    storage :fog # 本番環境のみ
-  else
-    storage :file # 本番環境以外
-  end
 
+    storage :fog # 本番環境のみ
+ 
   include CarrierWave::RMagick
 
   #上限変更
-    process :resize_to_limit => [170, 195]
+    process :resize_to_limit => [300, 700]
   
   #JPGで保存
     process :convert => 'jpg'
   
   #サムネイルを生成
     version :thumb do
-      process :resize_to_limit => [170, 195]
+      process :resize_to_limit => [300, 300]
     end
   
   # jpg,jpeg,gif,pngのみ
