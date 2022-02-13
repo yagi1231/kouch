@@ -17,19 +17,17 @@ li{
   text-align:center ;
 }
 
-#order-btn {
-  display: none;
-}
-
 #reservation_image {
  margin:0 auto;
 }
 
-button {
-  width:110px;
+#order-btn {
+  width:20%;
   height:50px;
-  margin:10px 30px;
+  margin:10px;
   border-radius: 100%;
+  font-size: 10px;
+  font-weight: 900;
 }
 
 @media screen and (max-width: 480px){

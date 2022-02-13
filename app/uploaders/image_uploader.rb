@@ -11,14 +11,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
   #上限変更
-    process :resize_to_limit => [300, 700]
+    process :resize_to_limit => [170, 195]
   
   #JPGで保存
     process :convert => 'jpg'
   
   #サムネイルを生成
     version :thumb do
-      process :resize_to_limit => [300, 300]
+      process :resize_to_limit => [150, 150]
     end
   
   # jpg,jpeg,gif,pngのみ
