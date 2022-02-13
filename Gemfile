@@ -76,3 +76,4 @@ gem 'kaminari'
 gem 'fog-aws'
 gem 'dotenv-rails'
 gem "aws-sdk-s3", require: false
+gem 'rails_12factor', group: :production

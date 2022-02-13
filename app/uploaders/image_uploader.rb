@@ -18,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   
   #サムネイルを生成
     version :thumb do
-      process :resize_to_limit => [150, 150]
+      process :resize_to_limit => [170, 195]
     end
   
   # jpg,jpeg,gif,pngのみ
