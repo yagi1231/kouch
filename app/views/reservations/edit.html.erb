@@ -65,7 +65,7 @@
           <th><%= f.label :order ,"注文内容" %></th>
           <td>
             <div class="box">
-              <textarea id="textarea" name="reservation[order]" class="textarea" value="1" cols="50" style="width:80%;height:250px;"></textarea>
+              <textarea id="textarea" name="reservation[order]" class="textarea" cols="50" style="width:80%;height:250px;"><%=@reservation.order%></textarea>
                <p>省略ボタン</p>
                <input type="button" id="order-btn" value="ロース丼-780" onclick="menu(value)">
                <input type="button" id="order-btn" value="ヒレ丼-780" onclick="menu(value)">
@@ -101,7 +101,7 @@
           <th><%= f.label :price ,"金額" %></th>
           <td><input type="text" id="pri">
             <input type="button"  value="=" onclick="sum()">
-            <input size="20" type="text" id="sumpri" name="reservation[price]">円
+            <input size="20" type="text" id="sumpri" name="reservation[price]" value="<%=@reservation.price%>">円
           </td>
         </tr>
 
