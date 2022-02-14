@@ -107,7 +107,7 @@
 
         <tr>
           <th><%= f.label :time ,"日付-時間" %></th>
-          <td><input type="date" name="reservation[time]" value="<%=Date.today%>"> -
+          <td><input type="date" name="reservation[time]" value="<%=@reservation.time%>"> -
             <input type="text" name="reservation[backtime]" min="11:00" max="21:00" list="time-list" value="<%=@reservation.backtime%>">
             <datalist id="time-list">
               <option value="11:00-11:30"></option>
