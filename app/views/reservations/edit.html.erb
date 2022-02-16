@@ -99,7 +99,7 @@
 
         <tr>
           <th><%= f.label :price ,"金額" %></th>
-          <td><input type="text" id="pri">
+          <td><input type="text" id="pri"　name="reservation[pri]" value="<%=@reservation.pri%>">
             <input type="button"  value="=" onclick="sum()">
             <input size="20" type="text" id="sumpri" name="reservation[price]" value="<%=@reservation.price%>">円
           </td>
