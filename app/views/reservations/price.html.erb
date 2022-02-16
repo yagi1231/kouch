@@ -10,7 +10,7 @@
   <tbody>
   <% @sum_price.each do |sum_month,sum_price| %>
       <tr>
-        <td><%= sum_month %></td>
+        <td><%= sum_month[0] %>-<%= sum_month[1] %>月</td>
         <td><%= sum_price.to_s(:delimited) %></td>
       </tr>
     <% end %>
@@ -27,7 +27,7 @@
   <tbody>
   <% @ave_price.each do |ave_month,ave_price| %>
       <tr>
-        <td><%= ave_month %></td>
+        <td><%= ave_month[0] %>-<%= ave_month[1] %>月</td>
         <td><%= ave_price.round.to_s(:delimited) %></td>
       </tr>
     <% end %>
