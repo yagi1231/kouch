@@ -32,7 +32,7 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
     click_on "新規注文"
     fill_in "reservation[name]", with: "KOUCH"
     fill_in "reservation[address]", with: "埼玉県"
-    fill_in "reservation[telnum]", with: "0900000000"
+    fill_in "reservation[telnum]", with: "09000000000"
     fill_in "reservation[time]", with: "2021-10-29"
     fill_in "reservation[backtime]", with: "13:30-14:00"
     fill_in "reservation[order]", with: "ご飯"
@@ -53,7 +53,7 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
     fill_in "reservation[delivery]", with: "青柳樹"
     fill_in "reservation[name]", with: "kouch"
     fill_in "reservation[address]", with: "埼玉県"
-    fill_in "reservation[telnum]", with: "0800000000"
+    fill_in "reservation[telnum]", with: "09000000000"
     fill_in "reservation[time]", with: "2021-10-30"
     fill_in "reservation[backtime]", with: "13:30-14:00"
     fill_in "reservation[order]", with: "唐揚げ"
@@ -61,7 +61,7 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
     check "reservation[category]", with: "大戸屋"
     check "reservation[categoryname]", with: "民家"
     fill_in "reservation[remarks]", with: "特になし"
-    attach_file "reservation[image]", "#{Rails.root}/app/assets/images/IMG_1570.jpg"
+    attach_file "reservation[image]", "#{Rails.root}/app/assets/images/default.png"
     click_on "登録完了する"
     expect(page.accept_confirm).to eq "この情報で変更しますか？"
     expect(page).to have_content '登録が完了しました'
@@ -92,9 +92,7 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
   scenario "ボタンの確認"do 
     sign_in(user)
     click_on "新規注文"
-    find(".button").click
-    expect(page).to have_text("×")
-    expect(page).to have_content '×'
+    click_on "ヒレ丼-780"
   end
 
   scenario "ハンバーガーメニュー確認"do

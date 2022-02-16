@@ -18,7 +18,4 @@ class User < ApplicationRecord
   has_many :infos
   has_many :reservations
   has_many :likes
-
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
 end

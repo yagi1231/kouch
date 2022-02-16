@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(params.require(:reservation).permit(:name, :order, :address, :delivery, :price,
+    @reservation = Reservation.new(params.require(:reservation).permit(:name, :order, :address, :delivery, :price, :pri,
                                                                        :telnum, :time, :backtime, :remarks, :category, :categoryname, :image))
 
     if @reservation.save

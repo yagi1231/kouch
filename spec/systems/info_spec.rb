@@ -24,9 +24,9 @@ RSpec.describe 'Infosystems', js: true, type: :system do
     click_on "編集"
     fill_in "info[name]", with: "kouch"
     fill_in "info[address]", with: "埼玉県"
-    fill_in "info[telnum]", with: "0800000000"
+    fill_in "info[telnum]", with: "08000000000"
     fill_in "info[remark]", with: "特になし"
-    attach_file "info[image]", "#{Rails.root}/app/assets/images/IMG_1570.jpg"
+    attach_file "info[image]", "#{Rails.root}/app/assets/images/backimages.jpeg"
     click_on "登録完了する"
     expect(page.accept_confirm).to eq "この情報で変更しますか？"
     expect(page).to have_content 'ユーザー編集が完了しました'
@@ -42,11 +42,7 @@ RSpec.describe 'Infosystems', js: true, type: :system do
   end
 
   scenario "トップページへの確認ボタン"do
-    visit "users/sign_in"
-    fill_in "user[email]", with: "at.sao@gmail.com"
-    fill_in "user[password]", with: "aaaaaa"
-    click_on 'ログイン'
-    expect(page).to have_content 'ログインしました。'
+    sign_in(user)
     visit infos_path
     click_on "kouch"
     click_on "お客様情報一覧に戻る"
@@ -54,11 +50,7 @@ RSpec.describe 'Infosystems', js: true, type: :system do
   end
 
   scenario "検索機能テスト" do
-    visit "users/sign_in"
-    fill_in "user[email]", with: "at.sao@gmail.com"
-    fill_in "user[password]", with: "aaaaaa"
-    click_on 'ログイン'
-    expect(page).to have_content 'ログインしました。'
+    sign_in(user)
     visit infos_path
     fill_in 'q[name_or_telnum_or_address_cont]', with: 'kouch'
     click_on "検索"
@@ -66,11 +58,7 @@ RSpec.describe 'Infosystems', js: true, type: :system do
   end
 
   scenario "顧客情報をreservationに送る"do
-    visit "users/sign_in"
-    fill_in "user[email]", with: "at.sao@gmail.com"
-    fill_in "user[password]", with: "aaaaaa"
-    click_on 'ログイン'
-    expect(page).to have_content 'ログインしました。'
+    sign_in(user)
     visit infos_path
     click_on "kouch"
     click_on "新規注文画面へ"
@@ -92,13 +80,14 @@ RSpec.describe 'Infosystems', js: true, type: :system do
     info_up(info)
     info_up(info)
     info_up(info)
+    visit infos_path
     expect{ find_link('2', rel="next").click }
-    page_up(info)
+    page_u(info)
     expect{ find_link('1', rel="prev").click }
-    page_up(info)
+    page_u(info)
     expect{ find_link('Last', ".page-link").click }
-    page_up(info)
+    page_u(info)
     expect{ find_link('First', ".page-link").click }
-    page_up(info)
+    page_u(info)
   end
 end

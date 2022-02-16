@@ -3,7 +3,7 @@ module ReservationUpSupport
       visit new_reservation_path
       fill_in "reservation[name]", with: "KOUCH"
       fill_in "reservation[address]", with: "埼玉県"
-      fill_in "reservation[telnum]", with: "0900000000"
+      fill_in "reservation[telnum]", with: "09000000000"
       fill_in "reservation[time]", with: "2021-10-29"
       fill_in "reservation[backtime]", with: "13:30-14:00"
       fill_in "reservation[order]", with: "ご飯"

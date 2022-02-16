@@ -8,7 +8,7 @@ FactoryBot.define do
       id {1}
       name { "kouch" }
       address{"埼玉県"}
-      telnum {"0900000000"}
+      telnum {"09000000000"}
       time {Date.today}
       backtime {"13:30-14:00"}
       order {"ご飯"}
@@ -25,7 +25,7 @@ FactoryBot.define do
       id {2}
       name { "Takashi" }
       address{"東京都"}
-      telnum {"0700000000"}
+      telnum {"07000000000"}
       time {Date.today}
       backtime {"12:30-13:00"}
       order {"弁当"}
@@ -39,7 +39,7 @@ FactoryBot.define do
       id {3}
       name { "Satoshi" }
       address{"東京都"}
-      telnum {"0800000000"}
+      telnum {"08000000000"}
       time {Date.today}
       backtime {"19:30-20:00"}
       order {"弁当"}
@@ -53,7 +53,7 @@ FactoryBot.define do
       id {1}
       name { "kouch" }
       address{"埼玉県"}
-      telnum {"0900000000"}
+      telnum {"09000000000"}
       remark {"特になし"}
       trait :invalid do
         name {nil}
@@ -63,14 +63,14 @@ FactoryBot.define do
       id {2}
       name { "Ootoya" }
       address{"東京都"}
-      telnum {"0700000000"}
+      telnum {"07000000000"}
       remark {"特になし"}
     end   
     factory :kouch, class: Info do
       id {3}
       name { "Kouch" }
       address{"東京都"}
-      telnum {"0800000000"}
+      telnum {"08000000000"}
       remark {"特になし"}
     end
   end

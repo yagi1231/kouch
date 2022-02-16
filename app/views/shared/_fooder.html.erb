@@ -1,16 +1,44 @@
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-  let textarea=$('#textarea')
-  myInput = "";	
+    $(function(){
+    //印刷ボタンをクリックした時の処理
+    $('.print-btn').on('click', function(){
+    
+    //プリントしたいエリアの取得
+    var printArea = document.getElementsByClassName("print-area");
+    
+    //プリント用の要素「#print」を作成し、上で取得したprintAreaをその子要素に入れる。
+    $('body').append('<div id="print" class="printBc"></div>');
+    $(printArea).clone().appendTo('#print');
+    
+    //この下に、以降の処理が入ります。
+    $('body > :not(#print)').addClass('print-off');
+    window.print();
+    $('#print').remove();
+    $('.print-off').removeClass('print-off');
+     });
+    });
+    var i = 1 ;
+    function addForm() {
+      var input_data = document.createElement('input');
+      input_data.type = 'text';
+      var parent = document.getElementById('form_area');
+      parent.appendChild(input_data);
+      i++ ;
+    }
+</script> 
+
+<script>  
+   textarea=$('#textarea')
+   pri=$('#pri')
 
     function menu(btn) {
       let btns=btn.split("-"); 
       textarea.val(textarea.val() +btns[0]+"\n");
-      myInput += btns[1]+"+";	
-      document.getElementById('pri').value = myInput;
+      pri.val(pri.val() +btns[1]+"+");
     }
 
     function sum() {
         document.getElementById('sumpri').value=eval(document.getElementById('pri').value.slice(0,-1));
     }
-  </script>            
+</script>            
