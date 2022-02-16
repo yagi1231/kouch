@@ -38,7 +38,7 @@ class ReservationsController < ApplicationController
 
   def update
     @reservation = Reservation.find(params[:id])
-    if @reservation.update(params.require(:reservation).permit(:name, :order, :address, :delivery, :price, :telnum,
+    if @reservation.update(params.require(:reservation).permit(:name, :order, :address, :delivery, :price, :telnum, :pri,
                                                                :time, :backtime, :remarks, :category, :categoryname, :image))
       flash[:notice] = '登録が完了しました'
       redirect_to :reservations
