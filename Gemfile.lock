@@ -64,8 +64,8 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.554.0)
-    aws-sdk-core (3.126.1)
+    aws-partitions (1.555.0)
+    aws-sdk-core (3.126.2)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.525.0)
       aws-sigv4 (~> 1.1)
@@ -199,8 +199,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.1-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.1-x86_64-linux)
-      racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.21.0)
     parser (3.1.0.0)
@@ -288,10 +286,10 @@ GEM
     rspec-mocks (3.11.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
-    rspec-rails (5.1.0)
-      actionpack (>= 5.2)
-      activesupport (>= 5.2)
-      railties (>= 5.2)
+    rspec-rails (4.0.2)
+      actionpack (>= 4.2)
+      activesupport (>= 4.2)
+      railties (>= 4.2)
       rspec-core (~> 3.10)
       rspec-expectations (~> 3.10)
       rspec-mocks (~> 3.10)
@@ -374,8 +372,8 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  ruby
   x86_64-darwin-19
-  x86_64-linux
 
 DEPENDENCIES
   aws-sdk-s3
@@ -405,8 +403,8 @@ DEPENDENCIES
   rails-i18n
   rails_12factor
   ransack
-  rmagick
-  rspec-rails
+  rmagick (~> 4.2.4)
+  rspec-rails (~> 4.0.2)
   rubocop
   rubocop-rails
   sass-rails (>= 6)
@@ -418,4 +416,4 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 BUNDLED WITH
-   2.2.25
+   2.3.7

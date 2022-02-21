@@ -53,7 +53,7 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
+  gem 'webdrivers', require: !ENV['SELENIUM_REMOTE_URL']
   gem "rails-controller-testing"
 end
 
@@ -63,14 +63,14 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'ransack'
-gem 'rspec-rails'
+gem 'rspec-rails', '~> 4.0.2'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 gem 'faker'
 gem 'pry-rails'
 gem 'devise'
 gem 'carrierwave', '~> 2.0'
-gem 'rmagick'
+gem 'rmagick', '~> 4.2.4'
 gem 'font-awesome-sass'
 gem 'kaminari'
 gem 'fog-aws'
