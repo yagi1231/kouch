@@ -1,9 +1,5 @@
 current directory: /Users/aoyagiju/Desktop/kouch/vendor/bundle/ruby/2.6.0/gems/mysql2-0.5.3/ext/mysql2
-<<<<<<< HEAD
-/Users/aoyagiju/.rbenv/versions/2.6.3/bin/ruby -I /Users/aoyagiju/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210911-50399-ia838k.rb extconf.rb --with-ldflags\=-L/usr/local/opt/openssl/lib
-=======
-/Users/aoyagiju/.rbenv/versions/2.6.3/bin/ruby -I /Users/aoyagiju/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20211128-17752-xbqi4f.rb extconf.rb --with-ldflags\=-L/usr/local/opt/openssl/lib
->>>>>>> kouch4
+/Users/aoyagiju/.rbenv/versions/2.6.3/bin/ruby -I /Users/aoyagiju/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20220221-10125-tkb3qo.rb extconf.rb --with-ldflags\=-L/usr/local/opt/openssl/lib
 checking for rb_absint_size()... yes
 checking for rb_absint_singlebit_p()... yes
 checking for rb_wait_for_single_fd()... yes
@@ -27,7 +23,7 @@ checking for MYSQL_OPTION_MULTI_STATEMENTS_ON in mysql.h... yes
 checking for MYSQL_OPTION_MULTI_STATEMENTS_OFF in mysql.h... yes
 checking for my_bool in mysql.h... no
 -----
-Setting rpath to /usr/local/Cellar/mysql/8.0.26/lib
+Setting rpath to /usr/local/Cellar/mysql/8.0.28/lib
 -----
 creating Makefile
 
@@ -45,8 +41,4 @@ linking shared-object mysql2/mysql2.bundle
 
 current directory: /Users/aoyagiju/Desktop/kouch/vendor/bundle/ruby/2.6.0/gems/mysql2-0.5.3/ext/mysql2
 make DESTDIR\= install
-<<<<<<< HEAD
-/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20210911-50399-rpboau/mysql2
-=======
-/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20211128-17752-19f89qb/mysql2
->>>>>>> kouch4
+/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20220221-10125-148bngz/mysql2
