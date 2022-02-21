@@ -80,6 +80,7 @@ RSpec.describe 'Infosystems', js: true, type: :system do
     info_up(info)
     info_up(info)
     info_up(info)
+    info_up(info)
     visit infos_path
     expect{ find_link('2', rel="next").click }
     page_u(info)

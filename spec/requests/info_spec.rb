@@ -80,7 +80,7 @@ RSpec.describe "Inforequest", type: :request do
       end
       it 'リダイレクトすること' do
         post infos_url, params: { info: FactoryBot.attributes_for(:info) }
-        expect(response).to redirect_to "/infos/2"
+        expect(response).to redirect_to(Info.last)
       end
     end
     context 'パラメータが不正な場合' do

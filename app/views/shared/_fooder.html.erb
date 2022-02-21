@@ -11,7 +11,7 @@
     $('body').append('<div id="print" class="printBc"></div>');
     $(printArea).clone().appendTo('#print');
     
-    //この下に、以降の処理が入ります。
+    //この下に、以降の処理が入る。
     $('body > :not(#print)').addClass('print-off');
     window.print();
     $('#print').remove();
@@ -29,8 +29,8 @@
 </script> 
 
 <script>  
-   textarea=$('#textarea')
-   pri=$('#pri')
+  textarea=$('#textarea')
+  pri=$('#pri')
 
     function menu(btn) {
       let btns=btn.split("-"); 
@@ -41,4 +41,12 @@
     function sum() {
         document.getElementById('sumpri').value=eval(document.getElementById('pri').value.slice(0,-1));
     }
-</script>            
+
+    function textcan() {
+        textarea.val(textarea.val().slice(0,-1))
+    }
+
+    function prican() {
+        pri.val(pri.val().slice(0,-4));
+    }
+</script>           

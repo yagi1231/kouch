@@ -29,6 +29,7 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
 
   scenario '新規登録' do
     sign_in(user)
+    visit reservations_path
     click_on "新規注文"
     fill_in "reservation[name]", with: "KOUCH"
     fill_in "reservation[address]", with: "埼玉県"
@@ -48,6 +49,7 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
 
   scenario "タスク編集" do
     sign_in(user)
+    visit reservations_path
     click_on "kouch"
     click_on "編集"
     fill_in "reservation[delivery]", with: "青柳樹"
@@ -69,6 +71,7 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
 
   scenario "タスク削除" do
     sign_in(user)
+    visit reservations_path
     click_on "kouch"
     click_on "削除"
     expect(page.accept_confirm).to eq "本当に削除しますか？"
@@ -77,6 +80,7 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
 
   scenario "検索機能テスト" do
     sign_in(user)
+    visit reservations_path
     fill_in 'q[name_or_telnum_or_address_cont]', with: 'kouch'
     click_on "検索"
     expect(page).to have_content 'kouch'
@@ -84,6 +88,7 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
 
   scenario "トップページへの確認ボタン"do
     sign_in(user)
+    visit reservations_path
     click_on "kouch"
     click_on "予約一覧表に戻る"
     expect(current_path).to eq reservations_path
@@ -91,12 +96,14 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
 
   scenario "ボタンの確認"do 
     sign_in(user)
+    visit reservations_path
     click_on "新規注文"
     click_on "ヒレ丼-780"
   end
 
   scenario "ハンバーガーメニュー確認"do
     sign_in(user)
+    visit reservations_path
     find("#nav-drawer").click
     click_on "お客様情報一覧"
     expect(current_path).to eq infos_path
@@ -104,11 +111,13 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
 
   scenario "発信テスト"do
     sign_in(user)
+    visit reservations_path
     click_on '0900000000'
   end
 
   scenario "印刷ページの確認"do
     sign_in(user)
+    visit reservations_path
     click_on "kouch"
     click_on "領収書の印刷"
     expect(page).to have_css '.print-area'
@@ -116,6 +125,7 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
 
   scenario "いいねをクリックした場合"do
     sign_in(user)
+    visit reservations_path
     find('.like-btn').click
     expect(page).to have_css '.like-btn'
     expect(page).to have_css "a.like-link", text: '1'
@@ -123,6 +133,7 @@ RSpec.describe 'Reservationsytems', js: true, type: :system do
   
   scenario "いいねを解除した場合"do 
     sign_in(user)
+    visit reservations_path
     find('.like-btn').click
     find('.unlike-btn').click
     expect(page).to have_css '.like-btn'

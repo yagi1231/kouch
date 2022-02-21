@@ -24,6 +24,7 @@
             <div class="box">
               <textarea id="textarea" name="reservation[order]" class="textarea" value="1" cols="50" style="width:80%;height:250px;"><%=@reservation.order%></textarea>
                <p>省略ボタン</p>
+               <input type="button" id="order-btn" value="一文字消す" onclick="textcan()">
                <input type="button" id="order-btn" value="ヒレ丼-780" onclick="menu(value)">
                <input type="button" id="order-btn" value="ステーキ-680" onclick="menu(value)">
                <input type="button" id="order-btn" value="ロース-680" onclick="menu(value)">
@@ -48,14 +49,15 @@
                <input type="button" id="order-btn" value="オムライス-250" onclick="menu(value)">
                <input type="button" id="order-btn" value="すき焼き-680" onclick="menu(value)">
                <input type="button" id="order-btn" value="キムチチゲ-680" onclick="menu(value)">
-               <input type="button" id="order-btn" value="おかずセット-1350" onclick="menu(value)">
             </div> 
           </td>
         </tr>
 
         <tr>
           <th><%= f.label :price ,"金額" %></th>
-          <td><input type="text" id="pri" name="reservation[pri]" value="<%=@reservation.pri%>">
+          <td>
+            <input type="button" value="金額をひとつ戻す" onclick="prican()">
+            <input type="text" id="pri" name="reservation[pri]" value="<%=@reservation.pri%>">
             <input type="button"  value="=" onclick="sum()">
             <input size="20" type="text" id="sumpri" name="reservation[price]" value="<%=@reservation.price%>">円
           </td>
@@ -112,7 +114,7 @@
 
         <tr>
           <th><%= f.label :category ,"カテゴリー（一つのみ選択）" %></th>
-          <td><input type="checkbox" value="KOUCH" name="reservation[category]" class="box">
+          <td><input type="checkbox" value="KOUCH" name="reservation[category]" class="box"　value="<%=@reservation.category%>">
           <label for="coding">KOUCH</label><br>
           <input type="checkbox" value="大戸屋" name="reservation[category]" class="box">
           <label for="coding">大戸屋</label><br>
@@ -122,7 +124,7 @@
 
         <tr>
           <th><%= f.label :category ,"企業or民家（一つのみ選択）" %></th>
-          <td><input type="checkbox" value="企業" name="reservation[categoryname]" class="box">
+          <td><input type="checkbox" value="企業" name="reservation[categoryname]" class="box" value="<%=@reservation.categoryname%>">
           <label for="coding">企業</label><br>
           <input type="checkbox" value="民家" name="reservation[categoryname]" class="box">
           <label for="coding">民家</label><br>
