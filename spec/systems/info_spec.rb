@@ -72,7 +72,7 @@ RSpec.describe 'Infosystems', js: true, type: :system do
     expect(page.accept_confirm).to eq "この情報で登録しますか？"
     expect(page).to have_content '登録が完了しました'
   end
-
+ 
   scenario "ペーネーションの確認"do
     sign_in(user)
     info_up(info)

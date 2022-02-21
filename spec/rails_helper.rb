@@ -20,6 +20,7 @@ require 'capybara/rspec'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
+
 Capybara.register_driver :remote_chrome do |app|
   url = "http://chrome:4444/wd/hub"
   caps = ::Selenium::WebDriver::Remote::Capabilities.chrome(
