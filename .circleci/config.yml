@@ -32,12 +32,9 @@ workflows:
   build_rubocop_and_deploy:
     jobs:
       - build
-      - rubocop:
+      - rdeploy:
           requires:
             - build
-      - deploy:
-          requires:
-            - rubocop
           filters:
             branches:
               only: master
