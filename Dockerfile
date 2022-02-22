@@ -18,6 +18,11 @@ COPY . /myapp
 RUN yarn install --check-files
 RUN bundle exec rails webpacker:compile
 RUN gem install rails
+RUN curl https://deb.nodesource.com/setup_12.x | bash
+RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get update && apt-get install -y nodejs yarn postgresql-client
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
