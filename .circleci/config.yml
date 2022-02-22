@@ -17,8 +17,6 @@ jobs:
     docker:
       - image: circleci/ruby:2.7-node
       - image: circleci/mysql:5.5
-      - image: selenium/standalone-chrome-debug:latest
-        name: chrome
         environment:
           MYSQL_ROOT_PASSWORD: password
           MYSQL_DATABASE: myapp_test
