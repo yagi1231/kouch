@@ -26,6 +26,7 @@ jobs:
           command: heroku container:login
       - run:
           name: push docker image
+          command: bundle update
           command: heroku container:push web -a $HEROKU_APP_NAME
       - run:
           name: release docker image
