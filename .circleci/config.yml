@@ -27,7 +27,7 @@ jobs:
       - run:
           name: push docker 
           command: bundle update --bundler
-      - run: /bin/sh -c bundle install
+      - run: gem install bundler
       - run:
           name: push docker image
           command: heroku container:push web -a $HEROKU_APP_NAME
