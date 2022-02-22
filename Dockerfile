@@ -1,5 +1,5 @@
 FROM ruby:2.7.0
-
+FROM node:17.1.0-slim
 ## nodejsとyarnはwebpackをインストールする際に必要
 # yarnパッケージ管理ツールをインストール
 RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
