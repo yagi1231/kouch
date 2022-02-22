@@ -1,5 +1,5 @@
 current directory: /Users/aoyagiju/Desktop/kouch/vendor/bundle/ruby/2.6.0/gems/rmagick-4.2.4/ext/RMagick
-/Users/aoyagiju/.rbenv/versions/2.6.3/bin/ruby -I /Users/aoyagiju/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20220221-10125-1un0cng.rb extconf.rb
+/Users/aoyagiju/.rbenv/versions/2.6.3/bin/ruby -I /Users/aoyagiju/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20220222-22205-1vt7lds.rb extconf.rb
 checking for brew... yes
 checking for Ruby version >= 2.3.0... yes
 checking for pkg-config... yes
@@ -21,7 +21,7 @@ checking for malloc/malloc.h... yes
 creating extconf.h
 creating Makefile
 ======================================================================
-Mon 21 Feb 22 19:18:13
+Tue 22 Feb 22 09:40:29
 This installation of RMagick 4.2.4 is configured for
 Ruby 2.6.3 (x86_64-darwin19) and ImageMagick 6.9.12
 ======================================================================
@@ -51,4 +51,4 @@ linking shared-object RMagick2.bundle
 
 current directory: /Users/aoyagiju/Desktop/kouch/vendor/bundle/ruby/2.6.0/gems/rmagick-4.2.4/ext/RMagick
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 RMagick2.bundle ./.gem.20220221-10125-vvcz13
+/usr/bin/install -c -m 0755 RMagick2.bundle ./.gem.20220222-22205-1tzjwwb

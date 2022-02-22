@@ -175,7 +175,7 @@ checked program was:
 "clang -o conftest -I/Users/aoyagiju/.rbenv/versions/2.6.3/include/ruby-2.6.0/x86_64-darwin19 -I/Users/aoyagiju/.rbenv/versions/2.6.3/include/ruby-2.6.0/ruby/backward -I/Users/aoyagiju/.rbenv/versions/2.6.3/include/ruby-2.6.0 -I.  -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick@6/6.9.12-40/include/ImageMagick-6 -std=gnu99 -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/aoyagiju/.rbenv/versions/2.6.3/lib  -L/usr/local/Cellar/imagemagick@6/6.9.12-40/lib -lMagickCore-6.Q16    -L/usr/local/Cellar/imagemagick@6/6.9.12-40/lib -lMagickCore-6.Q16  -lruby.2.6   "
 Undefined symbols for architecture x86_64:
   "_malloc_usable_size", referenced from:
-      _t in conftest-dd964e.o
+      _t in conftest-e65198.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -310,7 +310,7 @@ checked program was:
 "clang -o conftest -I/Users/aoyagiju/.rbenv/versions/2.6.3/include/ruby-2.6.0/x86_64-darwin19 -I/Users/aoyagiju/.rbenv/versions/2.6.3/include/ruby-2.6.0/ruby/backward -I/Users/aoyagiju/.rbenv/versions/2.6.3/include/ruby-2.6.0 -I.  -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick@6/6.9.12-40/include/ImageMagick-6 -std=gnu99 -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens  -fno-common -pipe conftest.c  -L. -L/Users/aoyagiju/.rbenv/versions/2.6.3/lib  -L/usr/local/Cellar/imagemagick@6/6.9.12-40/lib -lMagickCore-6.Q16    -L/usr/local/Cellar/imagemagick@6/6.9.12-40/lib -lMagickCore-6.Q16  -lruby.2.6   "
 Undefined symbols for architecture x86_64:
   "__aligned_msize", referenced from:
-      _t in conftest-ecf4cc.o
+      _t in conftest-904495.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -488,7 +488,7 @@ extconf.h is:
 /* end */
 
 ======================================================================
-Mon 21 Feb 22 19:18:13
+Tue 22 Feb 22 09:40:29
 This installation of RMagick 4.2.4 is configured for
 Ruby 2.6.3 (x86_64-darwin19) and ImageMagick 6.9.12
 ======================================================================
