@@ -26,16 +26,11 @@ default: &default
 development:
   <<: *default
   database: myapp_development
-  host: db
-  username: root
-  password: password
 
 test:
   <<: *default
   database: myapp_test
   host: <%= ENV.fetch("APP_DATABASE_HOST") { 'db' } %>
-  username: root
-  password: password
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.

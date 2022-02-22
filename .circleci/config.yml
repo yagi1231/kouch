@@ -15,7 +15,7 @@ jobs:
 
   rspec:
     docker:
-      - image: circleci/ruby:2.7-node
+      - image: circleci/ruby:2.7-node-browsers
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
