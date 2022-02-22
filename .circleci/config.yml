@@ -16,6 +16,7 @@ jobs:
   deploy:
     docker:
       - image: circleci/ruby:2.7
+      - image: circleci/ruby@sha256:7b5eede6785426c86fd08328a2b98b54b7bf67cdbd7d579c9b792e11f6bea8ed
     steps:
       - checkout
       - setup_remote_docker:
@@ -24,12 +25,6 @@ jobs:
       - run:
           name: heroku login
           command: heroku container:login
-      - run:
-          name: push
-          command: source ~/.nvm/nvm.sh
-      - run:
-          name: push
-          command: nvm install --lts
       - run:
           name: push docker
           command: yarn install --ignore-engines
