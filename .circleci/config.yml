@@ -29,14 +29,14 @@ jobs:
           command: |
             set -x
             docker-compose up -d
-            docker exec kouch curl -4 --retry 10 --retry-delay 3 --retry-connrefused http://localhost:3000
+            docker exec kouch-bento curl -4 --retry 10 --retry-delay 3 --retry-connrefused http://localhost:3000
       - run:
           name: Setup database
           command: |
-            docker-compose exec kouch bash -c 'yes n | bundle exec rails g spree:install --migrate --seed --sample --auto_accept'
+            docker-compose exec kouch-bento bash -c 'yes n | bundle exec rails g spree:install --migrate --seed --sample --auto_accept'
       - run:
           name: Run rspec
-          command: docker-compose exec kouch rspec
+          command: docker-compose exec kouch-bento rspec
 
 workflows:
   version: 2
