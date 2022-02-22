@@ -56,7 +56,7 @@
         <tr>
           <th><%= f.label :price ,"金額" %></th>
           <td>
-            <input type="button" value="金額をひとつ戻す" onclick="prican()">
+            <input type="button" value="金額を一つ戻す" onclick="prican()">
             <input type="text" id="pri" name="reservation[pri]" value="<%=@reservation.pri%>">
             <input type="button"  value="=" onclick="sum()">
             <input size="20" type="text" id="sumpri" name="reservation[price]" value="<%=@reservation.price%>">円
