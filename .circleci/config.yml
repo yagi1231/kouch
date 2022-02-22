@@ -13,28 +13,6 @@ jobs:
             - run:
                 name: Echo Test
                 command: echo "CircleCI Test"
-                
-    rubocop:
-        docker:
-          - image: circleci/ruby:2.7
-          - image: circleci/mysql:5.5
-            environment:
-              MYSQL_ROOT_PASSWORD: password
-              MYSQL_DATABASE: myapp_test
-              MYSQL_USER: root
-        environment:
-          BUNDLE_JOBS: "3"
-          BUNDLE_RETRY: "3"
-          APP_DATABASE_HOST: "127.0.0.1"
-          RAILS_ENV: rubocop
-        working_directory: ~/kouch
-        steps:
-            - checkout
-            - run: gem install bundler:1.16.6
-            - run: bundle install
-            - run:
-                name: Echo Test
-                command: bundle exec rubocop
     
     # deploy ジョブ: EC2 に SSH 接続して、デプロイを実行する
     deploy:
@@ -45,6 +23,8 @@ jobs:
             # CircleCI に登録した秘密鍵を呼び出す
             - add_ssh_keys:
             # CircleCI に登録した環境変数を使って SSH
+            - run: eval "$(ssh-agent -s)"
+            - run: ssh-add ~/.ssh/id_rsa
             - run: ssh ${USER_NAME}@${HOST_NAME} "cd kouch && git pull"
  
 workflows:
