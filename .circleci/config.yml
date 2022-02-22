@@ -6,12 +6,12 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7
-    working_directory: ~/kouch
+      - image: alpine
     steps:
-      - checkout:
-          path: ~/kouch
-      - ruby/install-deps
+      - checkout
+      - run:
+          name: Echo Test
+          command: echo "CircleCI Test"
 
   test:
     docker:
@@ -72,4 +72,4 @@ workflows:
             - test
           filters:
             branches:
-              only: main
+              only: master
