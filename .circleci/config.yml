@@ -32,7 +32,7 @@ workflows:
   build_rubocop_and_deploy:
     jobs:
       - build
-      - rdeploy:
+      - deploy:
           requires:
             - build
           filters:
