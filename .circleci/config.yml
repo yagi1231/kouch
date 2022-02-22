@@ -10,13 +10,16 @@ jobs:
     working_directory: ~/kouch
     steps:
       - checkout:
-          path: ~/rails-docker-kyt
+          path: ~/kouch
       - ruby/install-deps
 
   deploy:
     docker:
       - image: circleci/ruby:2.7
     steps:
+      - run:
+          working_directory: src
+          command: bundle install
       - checkout
       - setup_remote_docker:
           version: 19.03.13
