@@ -23,13 +23,10 @@ jobs:
       - heroku/install
       - run:
           name: heroku login
-          command: docker-compose up
-      - run:
-          name: heroku login
           command: heroku container:login
       - run:
           name: push docker 
-          command: bundle update --bundler
+          command: docker-compose run web bundle update
       - run:
           name: push docker image
           command: heroku container:push web -a $HEROKU_APP_NAME
