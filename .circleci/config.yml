@@ -15,7 +15,7 @@ jobs:
 
   rspec:
     docker:
-      - image: circleci/ruby:2.7
+      - image: circleci/ruby:2.7-node
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
@@ -37,9 +37,6 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
-      - run:
- +        name: yarn Install
- +        command: yarn install
       - run:
           name: test
           command: bundle exec rspec
