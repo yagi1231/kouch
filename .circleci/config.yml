@@ -2,7 +2,7 @@ version: 2
  
 jobs:
     # build ジョブ: CircleCI 上で Docker コンテナを作成してテストする
-    rubocop:
+    build:
         docker:
             - image: alpine
         steps:
@@ -29,7 +29,7 @@ workflows:
     build_and_deploy:
         # build ジョブと deploy ジョブを登録する
         jobs:
-            - rubocop
+            - build
             - deploy:
                 requires:
                     # 依存性あるから deploy ジョブより先に build ジョブを実行してね、という命令
