@@ -38,6 +38,8 @@ jobs:
           name: yarn Install
           command: yarn install --ignore-engines
       - run: bundle exec bin/webpack
+      - run: docker-compose up -d chrome
+      - run: open vnc://localhost:5900
       - run:
           name: test
           command: bundle exec rspec
