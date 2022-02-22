@@ -25,8 +25,11 @@ jobs:
           name: heroku login
           command: heroku container:login
       - run:
-          name: push docker 
+          name: push
           command: bundle update --bundler
+      - run:
+          name: push docker
+          command: yarn install --ignore-engines
       - run:
           name: push docker image
           command: heroku container:push web -a $HEROKU_APP_NAME
