@@ -31,6 +31,7 @@ jobs:
         steps:
             - checkout
             - run: gem install bundler:1.16.6
+            - run: bundle install
             - run:
                 name: Echo Test
                 command: bundle exec rubocop
