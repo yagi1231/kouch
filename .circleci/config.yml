@@ -15,7 +15,7 @@ jobs:
                 command: echo "CircleCI Test"
     
     # deploy ジョブ: EC2 に SSH 接続して、デプロイを実行する
-   deploy:
+    deploy:
         docker:
           - image: circleci/ruby:2.7
         steps:
@@ -24,6 +24,10 @@ jobs:
                 version: 19.03.13
             - run:
                 name: heroku login
+                command: wget https://cli-assets.heroku.com/heroku-cli/channels/stable/heroku-cli-linux-x64.tar.gz -O heroku.tar.gz
+                command: sudo mkdir -p /usr/local/lib/heroku
+                command: sudo tar --strip-components 1 -zxvf heroku.tar.gz -C /usr/local/lib/heroku
+                command: sudo ln -s /usr/local/lib/heroku/bin/heroku /usr/local/bin/heroku
                 command: heroku container:login
             - run:
                 name: push docker image
