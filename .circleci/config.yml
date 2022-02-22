@@ -32,7 +32,9 @@ jobs:
           - checkout:
               path: ~/rails-docker-kyt
           - ruby/install-deps
-                - run: bundle exec rubocop
+            - run: 
+                name: Echo rubocop
+                command: bundle exec rubocop
     
     # deploy ジョブ: EC2 に SSH 接続して、デプロイを実行する
     deploy:
