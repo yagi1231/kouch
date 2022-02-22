@@ -15,9 +15,6 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
 COPY . /myapp
 
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \12.13.0
-    apt-get install -y nodejs
-
 RUN yarn install --check-files
 RUN bundle exec rails webpacker:compile
 
