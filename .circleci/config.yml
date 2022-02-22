@@ -14,29 +14,29 @@ jobs:
       - ruby/install-deps
 
   rspec:
-    working_directory: ~/kouch
     docker:
       - image: circleci/ruby:2.7
+      - image: circleci/mysql:5.5
+        environment:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: myapp_test
+          MYSQL_USER: root
+    environment:
+      BUNDLE_JOBS: "3"
+      BUNDLE_RETRY: "3"
+      APP_DATABASE_HOST: "127.0.0.1"
+      RAILS_ENV: test
+    working_directory: ~/kouch
     steps:
-      - checkout
-      - setup_remote_docker
+      - checkout:
+          path: ~/kouch
+      - ruby/install-deps
       - run:
-          name: Setup environment variable
-          command: |
-            echo "export COMPOSE_FILE=docker-compose.ci.yml" >> $BASH_ENV
+          name: Database setup
+          command: bundle exec rails db:migrate
       - run:
-          name: Start containers and verify it is working
-          command: |
-            set -x
-            docker-compose up -d
-            docker exec kouch-bento curl -4 --retry 10 --retry-delay 3 --retry-connrefused http://localhost:3000
-      - run:
-          name: Setup database
-          command: |
-            docker-compose exec kouch-bento bash -c 'yes n | bundle exec rails g spree:install --migrate --seed --sample --auto_accept'
-      - run:
-          name: Run rspec
-          command: docker-compose exec kouch-bento rspec
+          name: test
+          command: bundle exec rspec
 
 workflows:
   version: 2
