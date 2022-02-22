@@ -15,7 +15,7 @@ services:
       - default
     ports:
       - '36379:6379'
-  potepanec:
+  kouch:
     build:
       context: .
       dockerfile: Dockerfile.ci

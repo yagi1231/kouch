@@ -13,38 +13,36 @@ jobs:
           path: ~/kouch
       - ruby/install-deps
 
-  deploy:
+  rspec:
+    working_directory: ~/kouch
     docker:
       - image: circleci/ruby:2.7
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 19.03.13
-      - heroku/install
+      - setup_remote_docker
       - run:
-          name: heroku login
-          command: heroku container:login
+          name: Setup environment variable
+          command: |
+            echo "export COMPOSE_FILE=docker-compose.ci.yml" >> $BASH_ENV
       - run:
-          name: push docker 
-          command: docker-compose run web bundle update
+          name: Start containers and verify it is working
+          command: |
+            set -x
+            docker-compose up -d
+            docker exec kouch curl -4 --retry 10 --retry-delay 3 --retry-connrefused http://localhost:3000
       - run:
-          name: push docker image
-          command: heroku container:push web -a $HEROKU_APP_NAME
+          name: Setup database
+          command: |
+            docker-compose exec kouch bash -c 'yes n | bundle exec rails g spree:install --migrate --seed --sample --auto_accept'
       - run:
-          name: release docker image
-          command: heroku container:release web -a $HEROKU_APP_NAME
-      - run:
-          name: database setup
-          command: heroku run bundle exec rake db:migrate RAILS_ENV=production -a $HEROKU_APP_NAME
+          name: Run rspec
+          command: docker-compose exec kouch rspec
 
 workflows:
   version: 2
   build_rubocop_and_deploy:
     jobs:
       - build
-      - deploy:
+      - rspec:
           requires:
             - build
-          filters:
-            branches:
-              only: master
