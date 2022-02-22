@@ -1,34 +1,9 @@
 version: 2.1
 jobs:
-  rspec:
-    working_directory: ~/kouch
-    docker:
-      - image: circleci/ruby
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Setup environment variable
-          command: |
-            echo "export COMPOSE_FILE=docker-compose.ci.yml" >> $BASH_ENV
-      - run:
-          name: Start containers and verify it is working
-          command: |
-            set -x
-            docker-compose up -d
-            docker exec kouch curl -4 --retry 10 --retry-delay 3 --retry-connrefused http://localhost:3000
-      - run:
-          name: Setup database
-          command: |
-            docker-compose exec kouch bash -c 'yes n | bundle exec rails g spree:install --migrate --seed --sample --auto_accept'
-      - run:
-          name: Run rspec
-          command: docker-compose exec kouch rspec
-
   rubocop:
     working_directory: ~/kouch
     docker:
-      - image: circleci/ruby:2.5.1
+      - image: circleci/ruby:2.7
     steps:
       - checkout
       - restore_cache:
