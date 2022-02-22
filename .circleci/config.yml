@@ -29,7 +29,6 @@ jobs:
           command: undle update --bundler
       - run:
           name: push docker image
-          command: undle update --bundler
           command: heroku container:push web -a $HEROKU_APP_NAME
       - run:
           name: release docker image
