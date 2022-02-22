@@ -29,12 +29,11 @@ jobs:
           RAILS_ENV: rubocop
         working_directory: ~/kouch
         steps:
-          - checkout:
-              path: ~/kouch
-          - ruby/install-deps
-          - run:
-          name: Echo rubocop
-          command: bundle exec rubocop
+            - checkout
+            - run: gem install bundler:1.16.6
+            - run:
+                name: Echo Test
+                command: bundle exec rubocop
     
     # deploy ジョブ: EC2 に SSH 接続して、デプロイを実行する
     deploy:
