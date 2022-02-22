@@ -20,21 +20,19 @@ require 'capybara/rspec'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-require 'capybara/rspec'
-require 'selenium-webdriver'
-
-Capybara.register_driver :selenium_chrome_headless do |app|
-  options = ::Selenium::WebDriver::Chrome::Options.new
-
-  options.add_argument('--headless')
-  options.add_argument('--no-sandbox')
-  options.add_argument('--disable-dev-shm-usage')
-  options.add_argument('--window-size=1400,1400')
-
-  driver = Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+Capybara.register_driver :remote_chrome do |app|
+  url = "http://chrome:4444/wd/hub"
+  caps = ::Selenium::WebDriver::Remote::Capabilities.chrome(
+    "goog:chromeOptions" => {
+      "args" => [
+        "no-sandbox",
+        "disable-gpu",
+        "window-size=1680,1050"
+      ]
+    }
+  )
+  Capybara::Selenium::Driver.new(app, browser: :remote, url: url, desired_capabilities: caps)
 end
-
-Capybara.javascript_driver = :selenium_chrome_headless
 
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 # Checks for pending migrations and applies them before tests are run.
@@ -81,7 +79,6 @@ RSpec.configure do |config|
   config.after(:all) do
     DatabaseCleaner.clean
   end
-  
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   # If you're not using ActiveRecord, or you'd prefer not to run each of your

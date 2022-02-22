@@ -26,6 +26,8 @@ jobs:
       BUNDLE_RETRY: "3"
       APP_DATABASE_HOST: "127.0.0.1"
       RAILS_ENV: test
+      - image: selenium/standalone-chrome-debug:latest
+        name: chrome
     working_directory: ~/kouch
     steps:
       - checkout:
