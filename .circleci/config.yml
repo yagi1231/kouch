@@ -21,8 +21,6 @@ jobs:
       - setup_remote_docker:
           version: 19.03.13
       - heroku/install
-      - gem uninstall bundler
-      - gem install bundler -v 1.16.6
       - run:
           name: heroku login
           command: heroku container:login
