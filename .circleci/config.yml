@@ -35,7 +35,10 @@ jobs:
              gem install bundler -v 1.16.6
       - run:
           name: push docker image
-          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git  master
+          command: |
+              git fetch
+              git rebase heroku/master 
+              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git  master
       - run:
           name: database setup
           command: heroku run bundle exec rake db:migrate RAILS_ENV=production -a $HEROKU_APP_NAME
