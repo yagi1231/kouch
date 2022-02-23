@@ -10,9 +10,8 @@ apt-get update && apt-get install -y yarn
 RUN apt-get update -qq && apt-get install -y nodejs yarn
 RUN mkdir /myapp
 WORKDIR /myapp
-COPY ./app
-RUN bundle config --local set path 'vendor/bundle' \
-  && bundle install
+COPY . /kouch
+RUN bundle install
 COPY . /myapp
 
 RUN yarn install --check-files
