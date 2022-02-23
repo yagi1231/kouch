@@ -13,6 +13,7 @@ RUN mkdir /kouch
 WORKDIR /kouch
 COPY Gemfile /kouch/Gemfile
 COPY Gemfile.lock /kouch/Gemfile.lock
+RUN gem install bundler
 RUN bundle install
 COPY . /kocuh
 
