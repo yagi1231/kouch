@@ -12,8 +12,6 @@ RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
-RUN bundle config --local set path 'vendor/bundle' \
-  && bundle install
 COPY . /myapp
 
 RUN yarn install --check-files
