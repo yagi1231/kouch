@@ -27,7 +27,7 @@ jobs:
       - run:
           name: push docker 
           command: bundle update --bundler
-      - run: gem install bundler -v 1.16.6
+      - run: bundle _1.16.6_ install
       - run: bundle -v 
       - run:
           name: push docker image
