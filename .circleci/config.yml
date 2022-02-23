@@ -16,6 +16,7 @@ jobs:
   deploy:
     docker:
       - image: circleci/ruby:2.7
+      - image: sue445/heroku-cli
     steps:
       - checkout
       - setup_remote_docker:
